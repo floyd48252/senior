@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabianga Senior School | Hard Work and Discipline for Success - Official Website</title>
+
+    <!-- Google Fonts: Montserrat for crisp institutional headings & Open Sans for clean body legibility -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        khs: {
+                            maroon: '#2C3278',
+                            maroonDark: '#202456',
+                            maroonLight: '#454C93',
+                            gold: '#166B45',
+                            goldLight: '#217B54',
+                            goldDark: '#125437',
+                            charcoal: '#1E2229',
+                            footer: '#15181E',
+                            offwhite: '#F8F9FA'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles for exact MHS-Kabarak visual fidelity, dropdowns, hero slider, and accessibility features */
+        
+         :root {
+            --font-scale: 1;
+            --letter-space: 0px;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: calc(15px * var(--font-scale));
+            letter-spacing: var(--letter-space);
+            color: #333842;
+            overflow-x: hidden;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Multi-level Navigation Dropdowns */
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+            border-top: 3px solid #166B45;
+        }
+        
+        .nav-item:hover .nav-dropdown,
+        .nav-item:focus-within .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        /* Hero Slider Transitions */
+        
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.9s ease-in-out, transform 6s ease-out;
+            transform: scale(1.03);
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            z-index: 1;
+        }
+        
+        .typewriter-text.typing::after {
+            content: '';
+            display: inline-block;
+            width: 2px;
+            height: 0.9em;
+            margin-left: 0.1em;
+            background: currentColor;
+            vertical-align: -0.08em;
+            animation: typewriter-caret 1s steps(2, start) infinite;
+        }
+        
+        .icon-svg {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+            object-fit: cover;
+            border-radius: 0.35rem;
+        }
+        
+        @keyframes typewriter-caret {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .typewriter-text.typing::after {
+                display: none;
+            }
+        }
+        /* Overlapping 3-Column Cards Elevation (Iconic MHS-Kabarak overlap) */
+        
+        .vmo-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .vmo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -5px rgba(44, 50, 120, 0.15);
+        }
+        /* Admissions Parallax CTA Banner */
+        
+        .admissions-parallax {
+            background-image: linear-gradient(135deg, rgba(32, 36, 86, 0.93) 0%, rgba(44, 50, 120, 0.88) 50%, rgba(30, 34, 41, 0.92) 100%), url('https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1443-scaled.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        /* Partner Logo Strip Grayscale to Color */
+        
+        .partner-badge {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .partner-badge:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 24px rgba(30, 34, 41, 0.1);
+        }
+        /* Accessibility Widget States */
+        
+        html.a11y-invert {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        
+        html.a11y-invert img,
+        html.a11y-invert .no-invert {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        
+        html.a11y-grayscale {
+            filter: grayscale(100%);
+        }
+        
+        body.a11y-underline a,
+        body.a11y-underline button {
+            text-decoration: underline !important;
+        }
+        
+        body.a11y-big-cursor,
+        body.a11y-big-cursor * {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath fill='%237B1113' stroke='%23FFFFFF' stroke-width='1.5' d='M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87c.45 0 .67-.53.35-.85L6.35 2.86a.5.5 0 0 0-.85.35Z'/%3E%3C/svg%3E") 4 4, auto !important;
+        }
+        /* Reading Guide Line */
+        
+        #reading-guide-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 28px;
+            background: rgba(33, 123, 84, 0.22);
+            border-top: 2px solid #2C3278;
+            border-bottom: 2px solid #2C3278;
+            pointer-events: none;
+            z-index: 9998;
+            display: none;
+            transform: translateY(-50%);
+        }
+        /* Custom Scrollbar */
+        
+         ::-webkit-scrollbar {
+            width: 9px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #2C3278;
+            border-radius: 4px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #202456;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased selection:bg-khs-maroon selection:text-white">
+
+    <!-- Accessibility Reading Guide Line -->
+    <div id="reading-guide-bar"></div>
+
+    <!-- ===================================================================== -->
+    <!-- 1. TOP UTILITY BAR (Matches MHS-Kabarak top maroon/dark contact bar)  -->
+    <!-- ===================================================================== -->
+    <div class="bg-khs-maroonDark text-white text-xs border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <!-- Left: Phone & Official Email -->
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6">
+                <a href="tel:+254720456789" class="flex items-center gap-2 hover:text-khs-goldLight transition-colors">
+                    <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1409-1536x869.jpg" alt="Kabianga campus" />
+                    <span>+254 720 456 789</span>
+                </a>
+                <span class="hidden sm:inline text-white/30">|</span>
+                <a href="mailto:info@kabiangahigh.sc.ke" class="flex items-center gap-2 hover:text-khs-goldLight transition-colors">
+                    <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1411-scaled.jpg" alt="Kabianga school building" />
+                    <span>info@kabiangahigh.sc.ke</span>
+                </a>
+                <span class="hidden md:inline text-white/30">|</span>
+                <span class="hidden md:flex items-center gap-1.5 text-white/80">
+                    <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1443-scaled.jpg" alt="Kabianga campus view" />
+                    Kabianga, Kericho County
+                </span>
+            </div>
+
+            <!-- Right: Social Media -->
+            <div class="flex items-center">
+                <div class="flex items-center gap-3 text-base">
+                    <a href="https://www.facebook.com/search/top/?q=Kabianga%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Kabianga Senior School on Facebook" title="Search for Kabianga Senior School on Facebook" class="hover:text-khs-gold transition-colors inline-flex items-center justify-center rounded-full p-1.5 border border-white/15 hover:border-khs-gold/60"
+                        aria-hidden="true">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Kabianga crest" />
+                    </a>
+                    <a href="https://x.com/search?q=Kabianga%20School&amp;src=typed_query" target="_blank" rel="noopener noreferrer" aria-label="Search for Kabianga Senior School on X" title="Search for Kabianga Senior School on X" class="hover:text-khs-gold transition-colors inline-flex items-center justify-center rounded-full p-1.5 border border-white/15 hover:border-khs-gold/60"
+                        aria-hidden="true">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Kabianga crest" />
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=-hmwKOh_rKU" target="_blank" rel="noopener noreferrer" aria-label="Watch Kabianga Senior School official trailer on YouTube" title="Kabianga Senior School official trailer on YouTube" class="hover:text-khs-gold transition-colors inline-flex items-center justify-center rounded-full p-1.5 border border-white/15 hover:border-khs-gold/60"
+                        aria-hidden="true">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Kabianga crest" />
+                    </a>
+                    <a href="https://www.instagram.com/explore/search/keyword/?q=Kabianga%20School" target="_blank" rel="noopener noreferrer" aria-label="Search for Kabianga Senior School on Instagram" title="Search for Kabianga Senior School on Instagram" class="hover:text-khs-gold transition-colors inline-flex items-center justify-center rounded-full p-1.5 border border-white/15 hover:border-khs-gold/60"
+                        aria-hidden="true">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Kabianga crest" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- 2. MAIN STICKY NAVIGATION BAR (Clean white header with dropdowns)     -->
+    <!-- ===================================================================== -->
+    <header id="main-navbar" class="sticky top-0 z-40 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 lg:h-24">
+
+                <!-- Left: Custom SVG Crest + School Name -->
+                <a href="#home" class="flex items-center gap-3.5 group focus:outline-none">
+                    <div class="w-12 h-14 sm:w-14 sm:h-16 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                        <img src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Kabianga Senior School crest" class="w-full h-full object-contain drop-shadow-sm">
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-khs-maroon tracking-tight leading-none">
+                                Kabianga Senior School
+                            </span>
+                        </div>
+                        <p class="text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-khs-goldDark mt-1 max-w-[220px] sm:max-w-none">
+                            School of Champions • National Boys' Boarding School • Est. 1925
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu (Exact MHS-Kabarak menu structure) -->
+                <nav class="hidden xl:flex items-center space-x-1 font-heading text-[13.5px] font-semibold text-gray-800">
+                    <a href="#home" class="px-3 py-2.5 text-khs-maroon border-b-2 border-khs-maroon transition-colors">
+                        Home
+                    </a>
+
+                    <!-- About Us Dropdown -->
+                    <div class="nav-item">
+                        <button class="px-3 py-2.5 hover:text-khs-maroon flex items-center gap-1.5 transition-colors">
+                            <span>About Us</span>
+                            
+                        </button>
+                        <div class="nav-dropdown absolute left-0 top-full w-64 bg-white rounded-b-lg py-2 z-50">
+                            <a href="#about-motto" class="block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">About Kabianga High</a>
+                            <a href="#official-profile" class="block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">School at a Glance</a>
+                            <button onclick="openInfoModal('profile')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Our Profile</button>
+                            <a href="#heritage-section" class="block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Our History (Since 1925)</a>
+                            <a href="#vision-mission" class="block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Vision, Mission and Values</a>
+                            <button onclick="openInfoModal('administration')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">School Administration</button>
+                            <button onclick="openInfoModal('policies')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">School Policies</button>
+                        </div>
+                    </div>
+
+                    <!-- Information Desk Dropdown -->
+                    <div class="nav-item">
+                        <button class="px-3 py-2.5 hover:text-khs-maroon flex items-center gap-1.5 transition-colors">
+                            <span>Information Desk</span>
+                            
+                        </button>
+                        <div class="nav-dropdown absolute left-0 top-full w-64 bg-white rounded-b-lg py-2 z-50">
+                            <a href="#notice-board" class="block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">News and Events</a>
+                            <a href="#notice-board" class="block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">School Notice Board</a>
+                            <button onclick="openInfoModal('sports')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Games and Sports</button>
+                            <button onclick="openInfoModal('clubs')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Clubs & Societies</button>
+                            <button onclick="openInfoModal('leadership')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Student Leadership</button>
+                            <button onclick="openInfoModal('facilities')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Facilities and Amenities</button>
+                        </div>
+                    </div>
+
+                    <!-- More... Dropdown -->
+                    <div class="nav-item">
+                        <button class="px-3 py-2.5 hover:text-khs-maroon flex items-center gap-1.5 transition-colors">
+                            <span>More...</span>
+                            
+                        </button>
+                        <div class="nav-dropdown absolute left-0 top-full w-60 bg-white rounded-b-lg py-2 z-50">
+                            <button onclick="openInfoModal('alumni')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Notable Alumni</button>
+                            <button onclick="openInfoModal('kcse')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all font-semibold text-khs-maroon">KCSE Results & Performance</button>
+                            <button onclick="openInfoModal('departments')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Academic Departments</button>
+                        </div>
+                    </div>
+
+                    <!-- Admission Dropdown -->
+                    <div class="nav-item">
+                        <button class="px-3 py-2.5 hover:text-khs-maroon flex items-center gap-1.5 transition-colors">
+                            <span>Admission</span>
+                            
+                        </button>
+                        <div class="nav-dropdown absolute left-0 top-full w-60 bg-white rounded-b-lg py-2 z-50">
+                            <button onclick="openInfoModal('admission-overview')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Admission Overview</button>
+                            <button onclick="openInfoModal('admission-criteria')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Admission Criteria</button>
+                            <button onclick="openInfoModal('term-dates')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Term Dates (2026/2027)</button>
+                            <button onclick="openInfoModal('fee-payment')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all">Fee Payment & Bank Details</button>
+                            <button onclick="openInfoModal('how-to-apply')" class="w-full text-left block px-4 py-2.5 text-xs font-medium text-gray-700 hover:bg-khs-offwhite hover:text-khs-maroon hover:pl-5 transition-all font-semibold text-khs-maroon">How To Apply</button>
+                        </div>
+                    </div>
+
+                    <button onclick="openInfoModal('gallery')" class="px-3 py-2.5 hover:text-khs-maroon transition-colors">
+                        Gallery
+                    </button>
+
+                    <button onclick="openInfoModal('contact')" class="ml-2 bg-khs-maroon hover:bg-khs-maroonDark text-white px-4 py-2.5 rounded shadow-sm transition-all">
+                        Contact Us
+                    </button>
+                </nav>
+
+                <!-- Mobile Hamburger Toggle -->
+                <div class="xl:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="p-2.5 rounded-lg text-khs-maroon hover:bg-khs-offwhite focus:outline-none">
+                        
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Slide-Down Drawer -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-gray-100 shadow-xl max-h-[82vh] overflow-y-auto">
+            <div class="px-4 pt-3 pb-6 space-y-2 font-heading text-sm">
+                <a href="#home" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-md font-bold text-khs-maroon bg-khs-offwhite">Home</a>
+
+                <!-- Mobile Accordion: About Us -->
+                <div>
+                    <button onclick="toggleMobileSub('mob-about')" class="w-full flex justify-between items-center px-3 py-2.5 font-semibold text-gray-800 hover:bg-gray-50 rounded-md">
+                        <span>About Us</span>
+                        
+                    </button>
+                    <div id="mob-about" class="hidden pl-5 pr-2 py-1 space-y-1 text-xs font-body text-gray-600 border-l-2 border-khs-gold ml-3">
+                        <a href="#about-motto" onclick="closeMobileMenu()" class="block py-2">About Kabianga High</a>
+                        <a href="#official-profile" onclick="closeMobileMenu()" class="block py-2">School at a Glance</a>
+                        <button onclick="closeMobileMenu(); openInfoModal('profile')" class="block py-2 text-left w-full">Our Profile</button>
+                        <a href="#heritage-section" onclick="closeMobileMenu()" class="block py-2">Our History</a>
+                        <a href="#vision-mission" onclick="closeMobileMenu()" class="block py-2">Vision, Mission & Values</a>
+                        <button onclick="closeMobileMenu(); openInfoModal('administration')" class="block py-2 text-left w-full">School Administration</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('policies')" class="block py-2 text-left w-full">School Policies</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Accordion: Information Desk -->
+                <div>
+                    <button onclick="toggleMobileSub('mob-info')" class="w-full flex justify-between items-center px-3 py-2.5 font-semibold text-gray-800 hover:bg-gray-50 rounded-md">
+                        <span>Information Desk</span>
+                        
+                    </button>
+                    <div id="mob-info" class="hidden pl-5 pr-2 py-1 space-y-1 text-xs font-body text-gray-600 border-l-2 border-khs-gold ml-3">
+                        <a href="#notice-board" onclick="closeMobileMenu()" class="block py-2">News and Events</a>
+                        <a href="#notice-board" onclick="closeMobileMenu()" class="block py-2">School Notice Board</a>
+                        <button onclick="closeMobileMenu(); openInfoModal('sports')" class="block py-2 text-left w-full">Games and Sports</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('clubs')" class="block py-2 text-left w-full">Clubs & Societies</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('leadership')" class="block py-2 text-left w-full">Student Leadership</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('facilities')" class="block py-2 text-left w-full">Facilities and Amenities</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Accordion: More... -->
+                <div>
+                    <button onclick="toggleMobileSub('mob-more')" class="w-full flex justify-between items-center px-3 py-2.5 font-semibold text-gray-800 hover:bg-gray-50 rounded-md">
+                        <span>More...</span>
+                        
+                    </button>
+                    <div id="mob-more" class="hidden pl-5 pr-2 py-1 space-y-1 text-xs font-body text-gray-600 border-l-2 border-khs-gold ml-3">
+                        <button onclick="closeMobileMenu(); openInfoModal('alumni')" class="block py-2 text-left w-full">Notable Alumni</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('kcse')" class="block py-2 text-left w-full font-semibold text-khs-maroon">KCSE Results</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('departments')" class="block py-2 text-left w-full">Academic Departments</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Accordion: Admission -->
+                <div>
+                    <button onclick="toggleMobileSub('mob-adm')" class="w-full flex justify-between items-center px-3 py-2.5 font-semibold text-gray-800 hover:bg-gray-50 rounded-md">
+                        <span>Admission</span>
+                        
+                    </button>
+                    <div id="mob-adm" class="hidden pl-5 pr-2 py-1 space-y-1 text-xs font-body text-gray-600 border-l-2 border-khs-gold ml-3">
+                        <button onclick="closeMobileMenu(); openInfoModal('admission-overview')" class="block py-2 text-left w-full">Overview</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('admission-criteria')" class="block py-2 text-left w-full">Admission Criteria</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('term-dates')" class="block py-2 text-left w-full">Term Dates</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('fee-payment')" class="block py-2 text-left w-full">Fee Payment</button>
+                        <button onclick="closeMobileMenu(); openInfoModal('how-to-apply')" class="block py-2 text-left w-full font-semibold text-khs-maroon">How To Apply</button>
+                    </div>
+                </div>
+
+                <button onclick="closeMobileMenu(); openInfoModal('gallery')" class="block w-full text-left px-3 py-2.5 font-semibold text-gray-800 hover:bg-gray-50 rounded-md">Gallery</button>
+                <button onclick="closeMobileMenu(); openInfoModal('contact')" class="block w-full text-center mt-2 bg-khs-maroon text-white py-3 rounded-md font-bold">Contact Us</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- 3. FULL-WIDTH HERO SLIDER SECTION (Exact MHS-Kabarak Hero Structure)  -->
+    <!-- ===================================================================== -->
+    <section id="home" class="relative w-full h-[540px] sm:h-[600px] lg:h-[650px] bg-khs-charcoal overflow-hidden">
+
+        <!-- Slide 1: Welcome to Kabianga Senior School -->
+        <div class="hero-slide active" data-slide="0">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1409-1536x869.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-khs-maroonDark/70 to-black/45"></div>
+            <div class="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center pb-14">
+                <div class="max-w-3xl">
+                    <span class="typewriter-text inline-block bg-khs-gold text-white font-heading font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded mb-4 shadow">
+                        The Pride of Kericho • Est. 1925
+                    </span>
+                    <h1 class="typewriter-text font-heading font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-white leading-tight mb-5 drop-shadow">
+                        Welcome To Kabianga Senior School
+                    </h1>
+                    <p class="typewriter-text text-base sm:text-lg lg:text-xl text-gray-100 font-normal leading-relaxed mb-8 max-w-2xl">
+                        A premier National Boys' Secondary School in Kericho County nurturing academic distinction, moral integrity, and holistic leadership.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#about-motto" class="bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-bold text-sm px-7 py-3.5 rounded shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Learn More...
+                        </a>
+                        <button onclick="openInfoModal('how-to-apply')" class="border-2 border-white/80 hover:border-khs-gold hover:bg-white/10 text-white font-heading font-semibold text-sm px-7 py-3.5 rounded transition-all">
+                            Admissions Guide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Legacy of KCSE Excellence -->
+        <div class="hero-slide" data-slide="1">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1417-1536x864.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-khs-maroonDark/70 to-black/45"></div>
+            <div class="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center pb-14">
+                <div class="max-w-3xl">
+                    <span class="typewriter-text inline-block bg-khs-gold text-white font-heading font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded mb-4 shadow">
+                        Academic Distinction & Rigor
+                    </span>
+                    <h2 class="typewriter-text font-heading font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-white leading-tight mb-5 drop-shadow">
+                        A Legacy of KCSE Excellence
+                    </h2>
+                    <p class="typewriter-text text-base sm:text-lg lg:text-xl text-gray-100 font-normal leading-relaxed mb-8 max-w-2xl">
+                        Consistently ranked among Kenya's top-performing national schools with a century-old tradition of discipline, scholarly inquiry, and hard work since 1925.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <button onclick="openInfoModal('kcse')" class="bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-bold text-sm px-7 py-3.5 rounded shadow-lg transition-all transform hover:-translate-y-0.5">
+                            View KCSE Results
+                        </button>
+                        <button onclick="openInfoModal('departments')" class="border-2 border-white/80 hover:border-khs-gold hover:bg-white/10 text-white font-heading font-semibold text-sm px-7 py-3.5 rounded transition-all">
+                            Academic Departments
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Holistic Education & Talent Development -->
+        <div class="hero-slide" data-slide="2">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1411-scaled.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-khs-maroonDark/70 to-black/45"></div>
+            <div class="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center pb-14">
+                <div class="max-w-3xl">
+                    <span class="typewriter-text inline-block bg-khs-gold text-white font-heading font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded mb-4 shadow">
+                        Beyond The Classroom
+                    </span>
+                    <h2 class="typewriter-text font-heading font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-white leading-tight mb-5 drop-shadow">
+                        Holistic Education & Talent Development
+                    </h2>
+                    <p class="typewriter-text text-base sm:text-lg lg:text-xl text-gray-100 font-normal leading-relaxed mb-8 max-w-2xl">
+                        Empowering young men through STEM innovation, championship athletics, rugby, music festivals, science congress, and vibrant student societies.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <button onclick="openInfoModal('sports')" class="bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-bold text-sm px-7 py-3.5 rounded shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Explore Campus Life
+                        </button>
+                        <button onclick="openInfoModal('gallery')" class="border-2 border-white/80 hover:border-khs-gold hover:bg-white/10 text-white font-heading font-semibold text-sm px-7 py-3.5 rounded transition-all">
+                            Photo Gallery
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Kabianga Senior School Gate -->
+        <div class="hero-slide" data-slide="3">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('gate.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-khs-maroonDark/70 to-black/45"></div>
+            <div class="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center pb-14">
+                <div class="max-w-3xl">
+                    <span class="typewriter-text inline-block bg-khs-gold text-white font-heading font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded mb-4 shadow">
+                        The Pride of Kericho
+                    </span>
+                    <h2 class="typewriter-text font-heading font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-white leading-tight mb-5 drop-shadow">
+                        Welcome to Kabianga Senior School
+                    </h2>
+                    <p class="typewriter-text text-base sm:text-lg lg:text-xl text-gray-100 font-normal leading-relaxed mb-8 max-w-2xl">
+                        A welcoming campus with a proud tradition of hard work, discipline, and achievement.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#about-motto" class="bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-bold text-sm px-7 py-3.5 rounded shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Learn More...
+                        </a>
+                        <button onclick="openInfoModal('profile')" class="border-2 border-white/80 hover:border-khs-gold hover:bg-white/10 text-white font-heading font-semibold text-sm px-7 py-3.5 rounded transition-all">
+                            School Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Student Innovation -->
+        <div class="hero-slide" data-slide="4">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('innovation.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-khs-maroonDark/70 to-black/45"></div>
+            <div class="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center pb-14">
+                <div class="max-w-3xl">
+                    <span class="typewriter-text inline-block bg-khs-gold text-white font-heading font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded mb-4 shadow">
+                        Innovation &amp; Creativity
+                    </span>
+                    <h2 class="typewriter-text font-heading font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-white leading-tight mb-5 drop-shadow">
+                        Turning Ideas into Innovation
+                    </h2>
+                    <p class="typewriter-text text-base sm:text-lg lg:text-xl text-gray-100 font-normal leading-relaxed mb-8 max-w-2xl">
+                        Learners develop practical skills through teamwork, robotics, and hands-on STEM projects.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <button onclick="openInfoModal('clubs')" class="bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-bold text-sm px-7 py-3.5 rounded shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Clubs &amp; Societies
+                        </button>
+                        <button onclick="openInfoModal('departments')" class="border-2 border-white/80 hover:border-khs-gold hover:bg-white/10 text-white font-heading font-semibold text-sm px-7 py-3.5 rounded transition-all">
+                            Academic Departments
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Science Learning -->
+        <div class="hero-slide" data-slide="5">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('science.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-khs-maroonDark/70 to-black/45"></div>
+            <div class="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center pb-14">
+                <div class="max-w-3xl">
+                    <span class="typewriter-text inline-block bg-khs-gold text-white font-heading font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded mb-4 shadow">
+                        Science &amp; Discovery
+                    </span>
+                    <h2 class="typewriter-text font-heading font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-white leading-tight mb-5 drop-shadow">
+                        Learning Through Exploration
+                    </h2>
+                    <p class="typewriter-text text-base sm:text-lg lg:text-xl text-gray-100 font-normal leading-relaxed mb-8 max-w-2xl">
+                        Practical science learning encourages curiosity, careful investigation, and new discoveries.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <button onclick="openInfoModal('departments')" class="bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-bold text-sm px-7 py-3.5 rounded shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Academic Departments
+                        </button>
+                        <button onclick="openInfoModal('kcse')" class="border-2 border-white/80 hover:border-khs-gold hover:bg-white/10 text-white font-heading font-semibold text-sm px-7 py-3.5 rounded transition-all">
+                            Academic Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Prev / Next Controls -->
+        <button id="hero-prev" aria-label="Previous Slide" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/35 hover:bg-khs-maroon text-white flex items-center justify-center border border-white/25 transition-all">
+            
+        </button>
+        <button id="hero-next" aria-label="Next Slide" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/35 hover:bg-khs-maroon text-white flex items-center justify-center border border-white/25 transition-all">
+            
+        </button>
+
+        <!-- Hero Slide Indicators -->
+        <div class="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+            <button onclick="goToSlide(0)" class="hero-dot w-8 h-2 rounded-full bg-khs-gold transition-all" aria-label="Slide 1"></button>
+            <button onclick="goToSlide(1)" class="hero-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 2"></button>
+            <button onclick="goToSlide(2)" class="hero-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 3"></button>
+            <button onclick="goToSlide(3)" class="hero-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 4"></button>
+            <button onclick="goToSlide(4)" class="hero-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 5"></button>
+            <button onclick="goToSlide(5)" class="hero-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 6"></button>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 4. OVERLAPPING 3-COLUMN VISION / MISSION / CORE VALUES CARDS          -->
+    <!--    (Pulls up -60px over bottom edge of Hero Slider like MHS-Kabarak)  -->
+    <!-- ===================================================================== -->
+    <section id="vision-mission" class="relative z-30 -mt-14 sm:-mt-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+                <!-- Card 1: Our Vision -->
+                <div class="vmo-card bg-white rounded-lg shadow-xl border-t-4 border-khs-maroon p-7 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-lg overflow-hidden bg-khs-maroon/10 text-khs-maroon flex items-center justify-center mb-5">
+                            <img src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1417-1536x864.jpg" alt="Our Vision" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-khs-charcoal mb-3">Our Vision</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            To be a premier center of academic excellence and holistic character formation in East Africa.
+                        </p>
+                    </div>
+                    <button onclick="openInfoModal('vision-values')" class="inline-flex items-center gap-2 text-khs-maroon hover:text-khs-goldDark font-heading font-bold text-xs uppercase tracking-wider transition-colors group">
+                        <span>Learn More...</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M5 12h12M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Card 2: Our Mission -->
+                <div class="vmo-card bg-white rounded-lg shadow-xl border-t-4 border-khs-gold p-7 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-lg overflow-hidden bg-khs-gold/15 text-khs-goldDark flex items-center justify-center mb-5">
+                            <img src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1409-1536x869.jpg" alt="Our Mission" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-khs-charcoal mb-3">Our Mission</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            To provide quality, learner-centered education in a disciplined environment that nurtures intellectual curiosity, moral uprightness, and service to humanity.
+                        </p>
+                    </div>
+                    <button onclick="openInfoModal('vision-values')" class="inline-flex items-center gap-2 text-khs-maroon hover:text-khs-goldDark font-heading font-bold text-xs uppercase tracking-wider transition-colors group">
+                        <span>Learn More...</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M5 12h12M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Card 3: Our Core Values -->
+                <div class="vmo-card bg-white rounded-lg shadow-xl border-t-4 border-khs-maroon p-7 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-lg overflow-hidden bg-khs-maroon/10 text-khs-maroon flex items-center justify-center mb-5">
+                            <img src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1411-scaled.jpg" alt="Our Core Values" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-khs-charcoal mb-3">Our Core Values</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 font-medium">
+                            Discipline; Integrity; Excellence; Teamwork; Fear of God &amp; Service to Society.
+                        </p>
+                    </div>
+                    <button onclick="openInfoModal('vision-values')" class="inline-flex items-center gap-2 text-khs-maroon hover:text-khs-goldDark font-heading font-bold text-xs uppercase tracking-wider transition-colors group">
+                        <span>Learn More...</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M5 12h12M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 5. MOTTO & SCHOOL INTRODUCTION SPLIT SECTION (2-Column Asymmetric)    -->
+    <!-- ===================================================================== -->
+    <section id="about-motto" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+
+                <!-- Left Column (5 cols): Eyebrow, Bold Motto Heading, Sub-headline, CTA -->
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-2.5 mb-3">
+                        <span class="w-8 h-0.5 bg-khs-gold"></span>
+                        <span class="font-heading font-bold text-xs uppercase tracking-[0.2em] text-khs-maroon">
+                            KABIANGA HIGH SCHOOL
+                        </span>
+                    </div>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-khs-charcoal leading-tight mb-4">
+                        Our Motto: <span class="text-khs-maroon">HARD WORK AND DISCIPLINE FOR SUCCESS</span>
+                    </h2>
+                    <p class="font-heading font-semibold text-base sm:text-lg text-gray-700 leading-snug mb-7 border-l-4 border-khs-gold pl-4">
+                        One of Kenya's most prestigious national schools with a century-long reputation for academic excellence.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="openInfoModal('contact')" class="bg-khs-maroon hover:bg-khs-maroonDark text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-4 rounded shadow-md transition-all">
+                            Contact Us
+                        </button>
+                        <button onclick="openInfoModal('profile')" class="bg-khs-offwhite hover:bg-gray-200 text-khs-charcoal font-heading font-bold text-xs uppercase tracking-wider px-6 py-4 rounded border border-gray-200 transition-all">
+                            School Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column (7 cols): Two rich paragraphs + expandable Read More -->
+                <div class="lg:col-span-7 text-gray-600 text-[15px] leading-relaxed space-y-5">
+                    <p>
+                        Situated amidst the lush, serene emerald tea estates of Belgut Sub-County in Kericho County, <strong class="text-gray-800">Kabianga Senior School</strong> stands as a beacon of transformative boys' secondary education in Kenya. Founded
+                        in 1925 as a government African school and elevated to National School status, Kabianga has consistently shaped generations of principled scholars, innovators, and national leaders.
+                    </p>
+                    <p>
+                        Our academic programs seamlessly integrate rigorous Senior School CBE pathways—spanning STEM (Science, Technology, Engineering &amp; Mathematics), Social Sciences, and Arts &amp; Sports Science—supported by ultra-modern science laboratories, digital ICT
+                        hubs, a well-stocked resource library, and a highly dedicated faculty committed to individual student mentorship.
+                    </p>
+
+                    <!-- Expandable Extra Institutional Content -->
+                    <div id="more-intro-text" class="hidden space-y-4 pt-2 border-t border-gray-100">
+                        <p>
+                            Beyond classroom instruction, life at "The School on the Hill" fosters all-round personal growth. Students actively participate in KSSSA championship athletics, rugby, football, basketball, Kenya Science and Engineering Fair (KSEF), national drama and
+                            music festivals, and vibrant peer-led clubs.
+                        </p>
+                    </div>
+
+                    <div class="pt-1">
+                        <button id="toggle-intro-btn" onclick="toggleIntroReadMore()" class="inline-flex items-center gap-2 text-khs-maroon hover:text-khs-goldDark font-heading font-bold text-sm transition-colors">
+                            <span id="toggle-intro-label">Read More...</span>
+                            
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="official-profile" class="py-16 sm:py-20 bg-khs-offwhite border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-9">
+                <span class="font-heading font-bold text-xs uppercase tracking-widest text-khs-maroon block mb-1.5">
+                    From the official school website
+                </span>
+                <h2 class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-khs-charcoal">
+                    Kabianga Senior School at a Glance
+                </h2>
+                <p class="text-sm sm:text-base text-gray-600 mt-3">
+                    The school is located in Belgut Constituency, Kericho County, was founded in 1925, and offers boarding education on the Kenyan curriculum.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Student enrollment</p>
+                    <p class="font-heading font-extrabold text-2xl sm:text-3xl text-khs-maroon mt-2">2,561</p>
+                </div>
+                <div class="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Qualified teachers</p>
+                    <p class="font-heading font-extrabold text-2xl sm:text-3xl text-khs-maroon mt-2">109</p>
+                </div>
+                <div class="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">2025 KCSE result</p>
+                    <p class="font-heading font-extrabold text-2xl sm:text-3xl text-khs-maroon mt-2">8.8402</p>
+                </div>
+                <div class="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">2026 KCSE candidates</p>
+                    <p class="font-heading font-extrabold text-2xl sm:text-3xl text-khs-maroon mt-2">880</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div class="bg-white rounded-lg border border-gray-200 p-5">
+                    <h3 class="font-heading font-bold text-khs-charcoal mb-2">Curriculum</h3>
+                    <p class="text-gray-600">Languages, Technical &amp; Applied, Humanities, Science, and Mathematics.</p>
+                </div>
+                <div class="bg-white rounded-lg border border-gray-200 p-5">
+                    <h3 class="font-heading font-bold text-khs-charcoal mb-2">Co-curricular activities</h3>
+                    <p class="text-gray-600">Games, student journalism, performing arts, and music.</p>
+                </div>
+                <div class="bg-white rounded-lg border border-gray-200 p-5">
+                    <h3 class="font-heading font-bold text-khs-charcoal mb-2">Official contact</h3>
+                    <p class="text-gray-600">P.O. Box 18 – 20201, Kabianga, Kenya</p>
+                    <p class="text-gray-600 mt-1"><a href="tel:+254798432828" class="hover:text-khs-maroon">+254 798-432-828</a></p>
+                    <p class="text-gray-600 mt-1"><a href="mailto:info@ks.sc.ke" class="hover:text-khs-maroon">info@ks.sc.ke</a></p>
+                    <p class="text-gray-600 mt-1">Office hours: 8:00 A.M. – 5:00 P.M.</p>
+                </div>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-6">
+                Source: <a href="https://ks.sc.ke/" target="_blank" rel="noopener noreferrer" class="text-khs-maroon underline">ks.sc.ke</a>. Figures and contact details are reproduced from the source homepage and may change.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 6. FULL-WIDTH PARALLAX "ADMISSIONS INVITED" CALL-TO-ACTION BANNER     -->
+    <!-- ===================================================================== -->
+    <section class="admissions-parallax py-16 sm:py-20 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+                <div class="max-w-2xl">
+                    <span class="inline-block bg-white/15 backdrop-blur-sm border border-khs-gold/50 text-khs-goldLight font-heading font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+                        Applications Open • Senior School Grade 10 &amp; Form 2–4 Transfers
+                    </span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] leading-tight mb-3">
+                        Admissions Invited for the Academic Year
+                    </h2>
+                    <p class="text-gray-200 text-sm sm:text-base">
+                        Join a tradition of excellence, discipline, and holistic character formation at Kabianga Senior School, Kericho.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <button onclick="openInfoModal('how-to-apply')" class="bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-extrabold text-sm uppercase tracking-wider px-9 py-4 rounded shadow-xl transition-all transform hover:scale-105 flex items-center gap-3">
+                        <span>How to Apply</span>
+                        
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 7. "SCHOOL NOTICE BOARD" CAROUSEL / GRID SECTION (With 1, 2 controls)  -->
+    <!-- ===================================================================== -->
+    <section id="notice-board" class="py-16 sm:py-24 bg-khs-offwhite border-b border-gray-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header + Pagination Controls (1, 2 like MHS-Kabarak) -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="font-heading font-bold text-xs uppercase tracking-widest text-khs-maroon block mb-1.5">
+                        Official Circulars &amp; Updates
+                    </span>
+                    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-khs-charcoal">
+                        School Notice Board
+                    </h2>
+                    <div class="w-16 h-1 bg-khs-gold mt-3 rounded"></div>
+                </div>
+
+                <!-- Pagination Controls (1, 2 indicators + Arrows) -->
+                <div class="flex items-center gap-2">
+                    <button onclick="switchNoticePage(1)" aria-label="Previous Notices" class="w-9 h-9 rounded border border-gray-300 bg-white hover:bg-khs-maroon hover:text-white hover:border-khs-maroon text-gray-600 flex items-center justify-center transition-colors">
+                        
+                    </button>
+                    <button id="notice-page-btn-1" onclick="switchNoticePage(1)" class="w-9 h-9 rounded font-heading font-bold text-xs bg-khs-maroon text-white shadow-sm transition-colors">
+                        1
+                    </button>
+                    <button id="notice-page-btn-2" onclick="switchNoticePage(2)" class="w-9 h-9 rounded font-heading font-bold text-xs bg-white border border-gray-300 text-gray-700 hover:border-khs-maroon transition-colors">
+                        2
+                    </button>
+                    <button onclick="switchNoticePage(2)" aria-label="Next Notices" class="w-9 h-9 rounded border border-gray-300 bg-white hover:bg-khs-maroon hover:text-white hover:border-khs-maroon text-gray-600 flex items-center justify-center transition-colors">
+                        
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notice Cards Container (Dynamically rendered for Page 1 & Page 2) -->
+            <div id="notices-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Populated by JavaScript -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 8. PARTNER & REGULATORY LOGOS STRIP                                   -->
+    <!-- ===================================================================== -->
+    <section class="py-12 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center font-heading font-bold text-[11px] uppercase tracking-[0.2em] text-gray-400 mb-7">
+                Affiliated Bodies, Accreditation &amp; Strategic Partners
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5 items-stretch">
+
+                <!-- 1. Ministry of Education Kenya -->
+                <div class="partner-badge flex flex-col items-center gap-3 p-4 rounded-lg border border-gray-100 bg-white w-full justify-center text-center">
+                    <a href="https://education.go.ke/" target="_blank" rel="noopener noreferrer" aria-label="Ministry of Education, Kenya official website" class="h-16 w-full flex items-center justify-center">
+                        <img src="https://education.go.ke/sites/default/files/education_0.png" alt="Ministry of Education, Kenya logo" loading="lazy" decoding="async" class="max-h-16 max-w-full object-contain">
+                    </a>
+                    <div class="leading-tight">
+                        <span class="block font-heading font-bold text-xs text-gray-800">Ministry of Education</span>
+                        <span class="text-[10px] text-gray-500">Republic of Kenya</span>
+                    </div>
+                </div>
+
+                <!-- 2. KNEC -->
+                <div class="partner-badge flex flex-col items-center gap-3 p-4 rounded-lg border border-gray-100 bg-white w-full justify-center text-center">
+                    <a href="https://knec.ac.ke/" target="_blank" rel="noopener noreferrer" aria-label="Kenya National Examinations Council official website" class="h-16 w-full flex items-center justify-center">
+                        <img src="https://knec.ac.ke/wp-content/uploads/2026/02/logo_knec_new.png" alt="Kenya National Examinations Council logo" loading="lazy" decoding="async" class="max-h-16 max-w-full object-contain">
+                    </a>
+                    <div class="leading-tight">
+                        <span class="block font-heading font-bold text-xs text-gray-800">KNEC</span>
+                        <span class="text-[10px] text-gray-500">Examinations Council</span>
+                    </div>
+                </div>
+
+                <!-- 3. Kabianga Senior School Crest -->
+                <div class="partner-badge flex flex-col items-center gap-3 p-4 rounded-lg border border-gray-100 bg-white w-full justify-center text-center">
+                    <a href="https://ks.sc.ke/" target="_blank" rel="noopener noreferrer" aria-label="Kabianga Senior School official website" class="h-16 w-full flex items-center justify-center">
+                        <img src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Kabianga Senior School crest" loading="lazy" decoding="async" class="max-h-16 max-w-full object-contain">
+                    </a>
+                    <div class="leading-tight">
+                        <span class="block font-heading font-bold text-xs text-khs-maroon">Kabianga Senior School</span>
+                        <span class="text-[10px] text-gray-500">Hard Work and Discipline for Success</span>
+                    </div>
+                </div>
+
+                <!-- 4. University of Kabianga -->
+                <div class="partner-badge flex flex-col items-center gap-3 p-4 rounded-lg border border-gray-100 bg-white w-full justify-center text-center">
+                    <div class="h-16 w-full flex items-center justify-center">
+                        <img src="https://schoolnet.africa/ke/wp-content/uploads/sites/3/2024/06/University-Of-Kabianga-logo.png" alt="University of Kabianga logo" loading="lazy" decoding="async" class="max-h-16 max-w-full object-contain">
+                    </div>
+                    <div class="leading-tight">
+                        <span class="block font-heading font-bold text-xs text-gray-800">University of Kabianga</span>
+                        <span class="text-[10px] text-gray-500">Academic Partner</span>
+                    </div>
+                </div>
+
+                <!-- 5. KSSSA -->
+                <div class="partner-badge col-span-2 sm:col-span-1 flex flex-col items-center gap-3 p-4 rounded-lg border border-gray-100 bg-white w-full justify-center text-center">
+                    <a href="https://ksssa.go.ke/" target="_blank" rel="noopener noreferrer" aria-label="Kenya Secondary Schools Sports Association official website" class="h-16 w-full flex items-center justify-center">
+                        <img src="https://ksssa.go.ke/cxp/cropped-header-image.png" alt="Kenya Secondary Schools Sports Association logo" loading="lazy" decoding="async" class="max-h-16 max-w-full object-contain">
+                    </a>
+                    <div class="leading-tight">
+                        <span class="block font-heading font-bold text-xs text-gray-800">KSSSA</span>
+                        <span class="text-[10px] text-gray-500">Schools Sports Association</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 9. HERITAGE / PRINCIPAL'S PHILOSOPHY SECTION                          -->
+    <!--    ("Kabianga — Embodiment of Discipline & Excellence")               -->
+    <!-- ===================================================================== -->
+    <section id="heritage-section" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left: Framed Campus & Leadership Visual -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-khs-maroonDark">
+                        <img src="100.jpg" alt="Kabianga Senior School centenary celebration marking 100 years of heritage" class="w-full aspect-video object-contain bg-gray-900">
+                        <div class="px-5 py-4 text-white">
+                            <span class="bg-khs-gold text-white font-heading font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+                                Over 100 Years of Heritage
+                            </span>
+                            <p class="font-heading font-bold text-lg mt-2">The School on the Hill</p>
+                            <p class="text-xs text-gray-200">Shaping Kenya's Leaders Since 1925</p>
+                        </div>
+                    </div>
+                    <!-- Decorative Gold Corner Accent -->
+                    <div class="hidden sm:block absolute -bottom-4 -right-4 w-32 h-32 bg-khs-gold/20 rounded-xl -z-10"></div>
+                    <div class="hidden sm:block absolute -top-4 -left-4 w-24 h-24 border-4 border-khs-maroon/20 rounded-xl -z-10"></div>
+                </div>
+
+                <!-- Right: Institutional Ethos & Calligraphic Signature -->
+                <div class="lg:col-span-7">
+                    <div class="flex items-center gap-2.5 mb-2">
+                        <span class="w-8 h-0.5 bg-khs-gold"></span>
+                        <span class="font-heading font-bold text-xs uppercase tracking-[0.2em] text-khs-maroon">
+                            Kabianga
+                        </span>
+                    </div>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-khs-charcoal leading-tight mb-6">
+                        Embodiment of Discipline &amp; Excellence
+                    </h2>
+
+                    <div class="space-y-4 text-gray-600 text-[15px] leading-relaxed mb-7">
+                        <p>
+                            Since its establishment in 1925, Kabianga Senior School has stood on the principle that true education harmonizes intellectual rigor with unwavering moral character. Every student who walks through our gates is challenged to pursue personal mastery, respect
+                            diversity, and uphold self-discipline in both thought and action.
+                        </p>
+                        <p>
+                            Our proud alumni network spans medicine, engineering, judiciary, academia, public governance, and international athletics—testament to an enduring school culture where mentorship, spirituality, and hard work transform young boys into compassionate, visionary
+                            citizens.
+                        </p>
+                    </div>
+
+                    <!-- Calligraphic Principal Signature SVG & CTA -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4 border-t border-gray-200">
+                        <div>
+                            <!-- Stylized Calligraphic Signature SVG -->
+                            <svg class="w-44 h-12 text-khs-maroon" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 42 C24 14, 38 10, 34 40 C32 52, 48 22, 58 28 C64 32, 58 44, 68 40 C78 36, 86 18, 94 14 C96 28, 90 45, 102 42 C112 40, 118 28, 126 32 C132 35, 130 43, 142 39 C155 34, 174 26, 204 30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                                <path d="M22 49 Q95 43 185 47" stroke="#166B45" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                            <p class="font-heading font-bold text-xs text-gray-800 uppercase tracking-wider">Office of the Chief Principal</p>
+                            <p class="text-xs text-gray-500">Kabianga Senior School</p>
+                        </div>
+
+                        <button onclick="openInfoModal('administration')" class="self-start sm:self-auto bg-khs-maroon hover:bg-khs-maroonDark text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded shadow transition-all">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 10. MULTI-COLUMN DARK FOOTER WITH SCHOOL MAGAZINE DOWNLOAD CARD       -->
+    <!-- ===================================================================== -->
+    <footer class="bg-khs-footer text-gray-300 pt-16 pb-8 border-t-4 border-khs-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+
+                <!-- Column 1: About Kabianga -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-base uppercase tracking-wider mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-khs-gold"></span> About Kabianga
+                    </h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><button onclick="openInfoModal('profile')" class="hover:text-khs-gold transition-colors">Our Profile</button></li>
+                        <li><a href="#official-profile" class="hover:text-khs-gold transition-colors">School at a Glance</a></li>
+                        <li><a href="#heritage-section" class="hover:text-khs-gold transition-colors">Our History</a></li>
+                        <li><a href="#vision-mission" class="hover:text-khs-gold transition-colors">Mission, Vision &amp; Values</a></li>
+                        <li><button onclick="openInfoModal('administration')" class="hover:text-khs-gold transition-colors">School Administration</button></li>
+                        <li><button onclick="openInfoModal('policies')" class="hover:text-khs-gold transition-colors">School Policies</button></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Visitors -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-base uppercase tracking-wider mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-khs-gold"></span> Visitors
+                    </h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><button onclick="openInfoModal('admission-overview')" class="hover:text-khs-gold transition-colors">Admission Overview</button></li>
+                        <li><button onclick="openInfoModal('admission-criteria')" class="hover:text-khs-gold transition-colors">Admission Criteria</button></li>
+                        <li><button onclick="openInfoModal('term-dates')" class="hover:text-khs-gold transition-colors">Term Dates</button></li>
+                        <li><button onclick="openInfoModal('fee-payment')" class="hover:text-khs-gold transition-colors">Fee Payment</button></li>
+                        <li><button onclick="openInfoModal('how-to-apply')" class="hover:text-khs-gold transition-colors">How To Apply</button></li>
+                        <li><button onclick="openInfoModal('kcse')" class="hover:text-khs-gold transition-colors">KCSE Results</button></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-base uppercase tracking-wider mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-khs-gold"></span> Quick Links
+                    </h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#notice-board" class="hover:text-khs-gold transition-colors">News and Events</a></li>
+                        <li><a href="#notice-board" class="hover:text-khs-gold transition-colors">School Notice Board</a></li>
+                        <li><button onclick="openInfoModal('sports')" class="hover:text-khs-gold transition-colors">Games and Sports</button></li>
+                        <li><button onclick="openInfoModal('clubs')" class="hover:text-khs-gold transition-colors">Clubs &amp; Societies</button></li>
+                        <li><button onclick="openInfoModal('leadership')" class="hover:text-khs-gold transition-colors">Student Leadership</button></li>
+                        <li><button onclick="openInfoModal('facilities')" class="hover:text-khs-gold transition-colors">Facilities and Amenities</button></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: School Magazine Cover Card -->
+                <div>
+                    <h4 class="font-heading font-bold text-white text-base uppercase tracking-wider mb-5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-khs-gold"></span> School Magazine
+                    </h4>
+                    <div class="bg-khs-charcoal border border-white/10 rounded-lg p-4 shadow-lg">
+                        <!-- Stylized Magazine Cover Preview -->
+                        <div class="relative rounded overflow-hidden bg-gradient-to-br from-khs-maroon via-khs-maroonDark to-black p-4 border border-khs-gold/40 mb-3.5">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="bg-khs-gold text-white font-heading font-extrabold text-[9px] uppercase px-2 py-0.5 rounded">
+                                    2026 Edition
+                                </span>
+
+                            </div>
+                            <p class="font-heading font-extrabold text-white text-base leading-tight">
+                                THE KABIANGA ECHO
+                            </p>
+                            <p class="text-[11px] text-khs-goldLight mt-1 font-medium">
+                                Senior School &amp; Centenary Chronicle
+                            </p>
+                            <div class="mt-4 pt-2 border-t border-white/15 flex justify-between items-center text-[10px] text-gray-300">
+                                <span>PDF • 4.8 MB</span>
+                                <span>ISSN 2026-KHS</span>
+                            </div>
+                        </div>
+
+                        <button onclick="downloadSchoolMagazine()" class="w-full bg-khs-gold hover:bg-khs-goldLight text-white font-heading font-extrabold text-xs uppercase tracking-wider py-2.5 px-4 rounded shadow transition-all flex items-center justify-center gap-2">
+                            
+                            <span>DOWNLOAD</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-7 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+                <p class="text-center md:text-left">
+                    &copy; 2026 <span class="text-white font-semibold">Kabianga Senior School</span>. All Rights Reserved. | P.O. Box 1 - 20201, Kabianga, Kericho
+                </p>
+                <div class="flex items-center gap-5">
+                    <button onclick="openInfoModal('policies')" class="hover:text-khs-gold transition-colors">Privacy Policy</button>
+                    <button onclick="openInfoModal('contact')" class="hover:text-khs-gold transition-colors">Directions &amp; Map</button>
+                    <a href="#home" class="text-khs-gold hover:underline flex items-center gap-1">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Back to top" />
+                        <span>Back to Top</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- 11. FLOATING ACCESSIBILITY WIDGET (Iconic to MHS-Kabarak)             -->
+    <!-- ===================================================================== -->
+    <div id="a11y-widget" class="fixed bottom-5 right-5 z-50 no-invert">
+        <!-- Accessibility Options Panel -->
+        <div id="a11y-panel" class="hidden mb-3 w-72 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden">
+            <div class="bg-khs-maroon text-white px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1443-scaled.jpg" alt="Accessibility icon" />
+                    <span class="font-heading font-bold text-xs uppercase tracking-wider">Accessibility Options</span>
+                </div>
+                <button onclick="toggleA11yPanel()" aria-label="Close Accessibility Panel" class="text-white/80 hover:text-white flex items-center justify-center">
+                    <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Close" />
+                </button>
+            </div>
+            <div class="p-3.5 space-y-2 text-xs font-semibold text-gray-700">
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="adjustTextSize(0.08)" class="flex items-center justify-center gap-1.5 p-2.5 rounded border border-gray-200 hover:border-khs-maroon hover:text-khs-maroon transition-colors">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1417-1536x864.jpg" alt="Increase text" />
+                        <span>Increase Text</span>
+                    </button>
+                    <button onclick="adjustTextSize(-0.08)" class="flex items-center justify-center gap-1.5 p-2.5 rounded border border-gray-200 hover:border-khs-maroon hover:text-khs-maroon transition-colors">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1409-1536x869.jpg" alt="Decrease text" />
+                        <span>Decrease Text</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="adjustTextSpacing(0.6)" class="flex items-center justify-center gap-1.5 p-2.5 rounded border border-gray-200 hover:border-khs-maroon hover:text-khs-maroon transition-colors">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1411-scaled.jpg" alt="More spacing" />
+                        <span>More Spacing</span>
+                    </button>
+                    <button onclick="adjustTextSpacing(-0.6)" class="flex items-center justify-center gap-1.5 p-2.5 rounded border border-gray-200 hover:border-khs-maroon hover:text-khs-maroon transition-colors">
+                        <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1443-scaled.jpg" alt="Less spacing" />
+                        <span>Less Spacing</span>
+                    </button>
+                </div>
+
+                <button onclick="toggleA11yClass('invert')" class="w-full flex items-center justify-between px-3 py-2.5 rounded border border-gray-200 hover:bg-gray-50 transition-colors">
+                    <span class="flex items-center gap-2"><img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Invert" /> Invert Colours</span>
+                    <span id="badge-invert" class="text-[10px] px-1.5 py-0.5 rounded bg-gray-100">OFF</span>
+                </button>
+
+                <button onclick="toggleA11yClass('grayscale')" class="w-full flex items-center justify-between px-3 py-2.5 rounded border border-gray-200 hover:bg-gray-50 transition-colors">
+                    <span class="flex items-center gap-2"><img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1409-1536x869.jpg" alt="Grey hues" /> Grey Hues</span>
+                    <span id="badge-grayscale" class="text-[10px] px-1.5 py-0.5 rounded bg-gray-100">OFF</span>
+                </button>
+
+                <button onclick="toggleA11yBody('a11y-underline', 'badge-underline')" class="w-full flex items-center justify-between px-3 py-2.5 rounded border border-gray-200 hover:bg-gray-50 transition-colors">
+                    <span class="flex items-center gap-2"><img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1411-scaled.jpg" alt="Underline" /> Underline Links</span>
+                    <span id="badge-underline" class="text-[10px] px-1.5 py-0.5 rounded bg-gray-100">OFF</span>
+                </button>
+
+                <button onclick="toggleA11yBody('a11y-big-cursor', 'badge-cursor')" class="w-full flex items-center justify-between px-3 py-2.5 rounded border border-gray-200 hover:bg-gray-50 transition-colors">
+                    <span class="flex items-center gap-2"><img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1417-1536x864.jpg" alt="Big cursor" /> Big Cursor</span>
+                    <span id="badge-cursor" class="text-[10px] px-1.5 py-0.5 rounded bg-gray-100">OFF</span>
+                </button>
+
+                <button onclick="toggleReadingGuide()" class="w-full flex items-center justify-between px-3 py-2.5 rounded border border-gray-200 hover:bg-gray-50 transition-colors">
+                    <span class="flex items-center gap-2"><img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2024/02/DSC_1443-scaled.jpg" alt="Reading guide" /> Reading Guide</span>
+                    <span id="badge-guide" class="text-[10px] px-1.5 py-0.5 rounded bg-gray-100">OFF</span>
+                </button>
+
+                <button onclick="resetA11ySettings()" class="w-full mt-1 bg-khs-charcoal hover:bg-black text-white py-2.5 rounded font-heading text-[11px] uppercase tracking-wider transition-colors">
+                    <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Reset" />
+                     Reset All Settings
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Wheelchair Toggle Button -->
+        <button onclick="toggleA11yPanel()" aria-label="Open Accessibility Options" title="Accessibility Options" class="ml-auto w-13 h-13 w-12 h-12 rounded-full bg-khs-maroon hover:bg-khs-maroonDark text-white shadow-xl border-2 border-khs-gold flex items-center justify-center text-xl transition-transform hover:scale-110">
+            <img class="icon-svg" src="https://ks.sc.ke/wp-content/uploads/2026/10/Untitled-design-1.png" alt="Accessibility options" />
+        </button>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- INTERACTIVE MODAL FOR ALL MENU ITEMS, NOTICES, GALLERY & PORTALS      -->
+    <!-- ===================================================================== -->
+    <div id="info-modal" class="fixed inset-0 z-50 hidden bg-black/65 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-xl max-w-3xl w-full shadow-2xl border-t-4 border-khs-gold overflow-hidden my-8 animate-fadeIn">
+            <!-- Modal Header -->
+            <div class="bg-khs-maroon text-white px-6 py-4 flex justify-between items-center">
+                <div>
+                    <span id="modal-eyebrow" class="text-[10px] font-heading font-bold uppercase tracking-widest text-khs-goldLight block">
+                        Kabianga Senior School
+                    </span>
+                    <h3 id="modal-title" class="font-heading font-bold text-lg sm:text-xl">
+                        Information
+                    </h3>
+                </div>
+                <button onclick="closeInfoModal()" aria-label="Close Modal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+                    
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div id="modal-body" class="p-6 sm:p-8 max-h-[72vh] overflow-y-auto text-sm text-gray-700 leading-relaxed space-y-4">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-gray-50 px-6 py-3.5 border-t border-gray-200 flex justify-end gap-3">
+                <button onclick="closeInfoModal()" class="bg-khs-charcoal hover:bg-black text-white font-heading font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded transition-colors">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-zoom-modal" class="fixed inset-0 z-[70] hidden bg-black/90 p-4 sm:p-8 flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Enlarged image">
+        <button id="close-image-zoom" type="button" aria-label="Close enlarged image" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center text-xl transition-colors">
+            
+        </button>
+        <figure class="w-full max-w-7xl flex flex-col items-center gap-3">
+            <img id="image-zoom-target" alt="" class="w-full h-[85vh] object-contain rounded shadow-2xl">
+            <figcaption id="image-zoom-caption" class="text-white text-sm text-center"></figcaption>
+            <a id="image-zoom-link" class="hidden text-white text-sm underline underline-offset-2" rel="noopener noreferrer">Open linked page</a>
+        </figure>
+    </div>
+
+    <!-- Custom Non-Intrusive Toast Notification -->
+    <div id="toast-notification" class="fixed bottom-5 left-5 z-50 hidden bg-khs-charcoal text-white border-l-4 border-khs-gold px-5 py-3.5 rounded-lg shadow-2xl text-xs sm:text-sm font-medium flex items-center gap-3 max-w-sm">
+
+        <span id="toast-message">Notification message</span>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT: HERO SLIDER, NOTICE PAGINATION, MODALS & ACCESSIBILITY    -->
+    <!-- ===================================================================== -->
+    <script>
+        /* -------------------------------------------------------------------
+         * 1. HERO SLIDER LOGIC
+         * ------------------------------------------------------------------- */
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        let slideInterval;
+        const typingTimers = [];
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function animateSlideText(slide) {
+            typingTimers.forEach((timer) => clearTimeout(timer));
+            typingTimers.length = 0;
+            if (prefersReducedMotion) return;
+
+            const textElements = Array.from(slide.querySelectorAll('.typewriter-text')).map((element) => {
+                const text = element.dataset.typewriterText || element.textContent.trim();
+                element.dataset.typewriterText = text;
+                element.setAttribute('aria-label', text);
+                element.style.minHeight = '';
+                element.textContent = text;
+                element.style.minHeight = `${element.offsetHeight}px`;
+                element.classList.remove('typing');
+                element.textContent = '';
+                return {
+                    element,
+                    characters: Array.from(text)
+                };
+            });
+
+            let elementIndex = 0;
+
+            function typeNextElement() {
+                const textElement = textElements[elementIndex];
+                if (!textElement) return;
+
+                let characterIndex = 0;
+                textElement.element.classList.add('typing');
+
+                function revealNextCharacter() {
+                    if (characterIndex === textElement.characters.length) {
+                        textElement.element.classList.remove('typing');
+                        textElement.element.style.minHeight = '';
+                        elementIndex++;
+                        typingTimers.push(setTimeout(typeNextElement, 120));
+                        return;
+                    }
+
+                    textElement.element.textContent += textElement.characters[characterIndex];
+                    characterIndex++;
+                    typingTimers.push(setTimeout(revealNextCharacter, 35));
+                }
+
+                revealNextCharacter();
+            }
+
+            typeNextElement();
+        }
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('w-2.5', 'bg-white/50');
+                    dot.classList.add('w-8', 'bg-khs-gold');
+                } else {
+                    dot.classList.remove('w-8', 'bg-khs-gold');
+                    dot.classList.add('w-2.5', 'bg-white/50');
+                }
+            });
+            currentSlide = index;
+            animateSlideText(slides[index]);
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slides.length);
+        }
+
+        function prevSlide() {
+            showSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+            resetSlideTimer();
+        }
+
+        function resetSlideTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 8500);
+        }
+
+        document.getElementById('hero-next').addEventListener('click', () => {
+            nextSlide();
+            resetSlideTimer();
+        });
+
+        document.getElementById('hero-prev').addEventListener('click', () => {
+            prevSlide();
+            resetSlideTimer();
+        });
+
+        animateSlideText(slides[currentSlide]);
+        resetSlideTimer();
+
+        /* -------------------------------------------------------------------
+         * 2. MOBILE NAVIGATION DRAWER
+         * ------------------------------------------------------------------- */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        function toggleMobileSub(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('hidden');
+        }
+
+        /* -------------------------------------------------------------------
+         * 3. EXPANDABLE INTRO TEXT
+         * ------------------------------------------------------------------- */
+        function toggleIntroReadMore() {
+            const extra = document.getElementById('more-intro-text');
+            const label = document.getElementById('toggle-intro-label');
+            const isHidden = extra.classList.contains('hidden');
+
+            extra.classList.toggle('hidden');
+            label.textContent = isHidden ? 'Show Less' : 'Read More...';
+        }
+
+        /* -------------------------------------------------------------------
+         * 4. SCHOOL NOTICE BOARD DATA & PAGINATION (Pages 1 & 2)
+         * ------------------------------------------------------------------- */
+        const noticesData = {
+            1: [{
+                id: 'n1',
+                category: 'School Notice Board',
+                date: '02 November 2026',
+                title: '2027 Term Dates & Reporting Schedule',
+                image: 'images  (55).jpeg',
+                imageAlt: 'Students gathered at a school event on the Kabianga campus',
+                excerpt: 'Official Ministry of Education harmonized term dates, opening reporting times for Grade 10, Form 2, Form 3, and Form 4 candidates, and mid-term breaks.',
+                fullText: `
+                        <p><strong>Dear Parents, Guardians, and Students,</strong></p>
+                        <p>Please take note of the official 2027 Academic Calendar as approved by the Ministry of Education and the Kabianga Senior School Board of Management:</p>
+                        <ul class="list-disc pl-5 space-y-2 my-3">
+                            <li><strong>Term 1 Opening:</strong> Monday, 11th January 2027 (All students to report between 8:00 AM and 4:00 PM in full school uniform).</li>
+                            <li><strong>Term 1 Mid-Term Break:</strong> Thursday, 25th February – Sunday, 28th February 2027.</li>
+                            <li><strong>Term 1 Closing:</strong> Friday, 9th April 2027.</li>
+                            <li><strong>Term 2 Opening:</strong> Monday, 3rd May 2027.</li>
+                        </ul>
+                        <p>All fee balances must be cleared via official school bank accounts or eCitizen Paybill prior to reporting day.</p>
+                    `
+            }, {
+                id: 'n2',
+                category: 'School Notice Board',
+                date: '15 October 2026',
+                title: 'Kabianga Senior School - CBC Pathway Guide',
+                image: 'images  (3).jpeg',
+                imageAlt: 'Kabianga student with a school staff member outdoors',
+                imageFit: 'contain',
+                excerpt: 'Comprehensive subject selection handbook for incoming Grade 10 learners covering STEM, Social Sciences, and Arts & Sports Science tracks.',
+                fullText: `
+                        <p>Kabianga Senior School is fully accredited as a premier <strong>Senior School</strong> offering all three national Competency-Based Education (CBE) pathways:</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4">
+                            <div class="p-3 bg-red-50 border border-red-200 rounded">
+                                <h4 class="font-bold text-khs-maroon text-xs uppercase mb-1">1. STEM Pathway</h4>
+                                <p class="text-xs">Pure Sciences, Applied Sciences, Engineering &amp; Computer Studies.</p>
+                            </div>
+                            <div class="p-3 bg-amber-50 border border-amber-200 rounded">
+                                <h4 class="font-bold text-khs-goldDark text-xs uppercase mb-1">2. Social Sciences</h4>
+                                <p class="text-xs">Humanities, Business Studies, Languages &amp; Literature.</p>
+                            </div>
+                            <div class="p-3 bg-gray-100 border border-gray-300 rounded">
+                                <h4 class="font-bold text-gray-800 text-xs uppercase mb-1">3. Arts &amp; Sports</h4>
+                                <p class="text-xs">Sports Science, Music, Fine Arts &amp; Performing Arts.</p>
+                            </div>
+                        </div>
+                        <p>Career guidance officers are available during orientation week to assist learners and parents with pathway alignment.</p>
+                    `
+            }, {
+                id: 'n3',
+                category: 'School Notice Board',
+                date: '28 September 2026',
+                title: 'Annual Parents & Academic Clinic Day',
+                image: 'images  (54).jpeg',
+                imageAlt: 'A teacher advising students during a school activity',
+                excerpt: 'Invitation to all parents and guardians for the Joint Academic Clinics, subject teacher consultations, and Annual General Meeting (AGM).',
+                fullText: `
+                        <p>The Board of Management and Parents Association (PA) cordially invite all parents and guardians to the <strong>Annual Academic Clinic &amp; AGM</strong>.</p>
+                        <ul class="list-disc pl-5 space-y-1.5 my-3">
+                            <li><strong>Date:</strong> Saturday, 14th November 2026</li>
+                            <li><strong>Time:</strong> 8:30 AM – 3:30 PM</li>
+                            <li><strong>Venue:</strong> Kabianga Senior School Multi-Purpose Assembly Hall &amp; Quadrangle</li>
+                        </ul>
+                        <p>Parents will review individual learner progress transcripts one-on-one with class masters and heads of department.</p>
+                    `
+            }],
+            2: [{
+                id: 'n4',
+                category: 'School Notice Board',
+                date: '10 September 2026',
+                title: 'KCSE Mock & National Revision Timetable',
+                image: 'images  (4).jpeg',
+                imageAlt: 'Kabianga Senior School library reading area',
+                excerpt: 'Structured intensive revision clinics, joint national mocks, and practical laboratory sessions for the candidate class.',
+                fullText: `
+                        <p>The Academic Office has released the final phase of the <strong>KCSE Candidate Revision &amp; Practicals Timetable</strong>.</p>
+                        <p>Evening supervised preps run from 7:00 PM to 9:45 PM daily, complemented by weekend peer-group symposiums in Mathematics, Chemistry, Physics, Biology, and Languages.</p>
+                    `
+            }, {
+                id: 'n5',
+                category: 'School Notice Board',
+                date: '22 August 2026',
+                title: 'KSSSA National Games & Science Fair Honors',
+                image: 'images  (37).jpeg',
+                imageAlt: 'Kabianga students displaying certificates and awards outside the library',
+                excerpt: 'Celebrating our athletics squad, rugby 15s team, and KSEF young scientists for clinching regional and national trophies.',
+                fullText: `
+                        <p>Kabianga Senior School congratulates our student athletes and young innovators for their outstanding representation at the <strong>KSSSA National Championships</strong> and <strong>Kenya Science &amp; Engineering Fair (KSEF)</strong>.</p>
+                        <p>Our Physics and Robotics projects ranked Top 3 nationally, advancing to the East African Student Innovation Showcase.</p>
+                    `
+            }, {
+                id: 'n6',
+                category: 'School Notice Board',
+                date: '05 August 2026',
+                title: 'Tender Notice: Supply of Laboratory & ICT Equipment',
+                image: 'images  (53).jpeg',
+                imageAlt: 'Kabianga Senior School centenary sign and campus building',
+                excerpt: 'Sealed tenders are invited from eligible registered suppliers for the 2026/2027 financial year.',
+                fullText: `
+                        <p>Kabianga Senior School invites sealed bids from eligible firms for the supply and delivery of Chemistry/Physics laboratory reagents, ICT workstations, and boarding provisions for the 2026/2027 financial year.</p>
+                        <p>Tender documents may be obtained from the School Procurement Office during normal working hours.</p>
+                    `
+            }]
+        };
+
+        function switchNoticePage(pageNum) {
+            const grid = document.getElementById('notices-grid');
+            const btn1 = document.getElementById('notice-page-btn-1');
+            const btn2 = document.getElementById('notice-page-btn-2');
+
+            if (pageNum === 1) {
+                btn1.className = 'w-9 h-9 rounded font-heading font-bold text-xs bg-khs-maroon text-white shadow-sm transition-colors';
+                btn2.className = 'w-9 h-9 rounded font-heading font-bold text-xs bg-white border border-gray-300 text-gray-700 hover:border-khs-maroon transition-colors';
+            } else {
+                btn2.className = 'w-9 h-9 rounded font-heading font-bold text-xs bg-khs-maroon text-white shadow-sm transition-colors';
+                btn1.className = 'w-9 h-9 rounded font-heading font-bold text-xs bg-white border border-gray-300 text-gray-700 hover:border-khs-maroon transition-colors';
+            }
+
+            const items = noticesData[pageNum];
+            grid.innerHTML = items.map(item => `
+                <article class="bg-white rounded-lg shadow-md hover:shadow-xl border border-gray-100 overflow-hidden flex flex-col justify-between transition-all duration-300 group">
+                    <img src="${item.image}" alt="${item.imageAlt}" loading="lazy" decoding="async" class="w-full ${item.imageFit === 'contain' ? 'h-72 object-contain bg-gray-100' : 'h-48 object-cover'}">
+                    <div class="p-6 sm:p-7">
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="bg-khs-maroon/10 text-khs-maroon font-heading font-bold text-[11px] px-3 py-1 rounded-full">
+                                ${item.category}
+                            </span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1.5">
+                                
+                                ${item.date}
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-khs-charcoal group-hover:text-khs-maroon transition-colors mb-3 leading-snug">
+                            ${item.title}
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            ${item.excerpt}
+                        </p>
+                    </div>
+                    <div class="px-6 sm:px-7 py-4 bg-gray-50/70 border-t border-gray-100 flex justify-between items-center">
+                        <button onclick="openNoticeDetail('${item.id}')" class="inline-flex items-center gap-2 text-khs-maroon hover:text-khs-goldDark font-heading font-bold text-xs uppercase tracking-wider transition-colors">
+                            <span>Read Notice</span>
+                            
+                        </button>
+                        
+                    </div>
+                </article>
+            `).join('');
+            enableImageZoom(grid);
+        }
+
+        function openNoticeDetail(noticeId) {
+            const allNotices = [...noticesData[1], ...noticesData[2]];
+            const notice = allNotices.find(n => n.id === noticeId);
+            if (!notice) return;
+
+            document.getElementById('modal-eyebrow').textContent = `${notice.category} • ${notice.date}`;
+            document.getElementById('modal-title').textContent = notice.title;
+            const imageClass = notice.imageFit === 'contain' ?
+                'w-full h-80 object-contain bg-gray-100 rounded-lg' :
+                'w-full max-h-80 object-cover rounded-lg';
+            document.getElementById('modal-body').innerHTML = `
+                <img src="${notice.image}" alt="${notice.imageAlt}" loading="lazy" decoding="async" class="${imageClass}">
+                ${notice.fullText}
+            `;
+            enableImageZoom(document.getElementById('modal-body'));
+            document.getElementById('info-modal').classList.remove('hidden');
+        }
+
+        // Initialize Page 1 notices on load
+        switchNoticePage(1);
+
+        const schoolCouncilPhotoNumbers = [10, 41, 42, 44, 45, 48];
+        const schoolGalleryPhotos = [{
+                src: 'band.jpeg',
+                alt: 'Kabianga Senior School band with their instruments',
+                caption: 'Kabianga Senior School Band'
+            },
+            ...Array.from({
+                length: 59
+            }, (_, index) => {
+                const photoNumber = index + 1;
+                const isCouncilPhoto = schoolCouncilPhotoNumbers.includes(photoNumber);
+                return {
+                    src: `images  (${photoNumber}).jpeg`,
+                    alt: isCouncilPhoto ?
+                        'Kabianga Senior School Council members in black blazers' : `Kabianga Senior School photo ${photoNumber}`,
+                    caption: isCouncilPhoto ? 'Student Council' : 'School Life'
+                };
+            }),
+            ...Array.from({
+                length: 5
+            }, (_, index) => ({
+                src: `talent (${index + 1}).jpeg`,
+                alt: `Kabianga Senior School student talent photo ${index + 1}`,
+                caption: 'Student Talent'
+            }))
+        ];
+
+        /* -------------------------------------------------------------------
+         * 5. COMPREHENSIVE MODAL CONTENT FOR ALL MENU ITEMS & PORTALS
+         * ------------------------------------------------------------------- */
+        const modalContentMap = {
+                'profile': {
+                    eyebrow: 'About Kabianga Senior School',
+                    title: 'Institutional Profile',
+                    html: `
+                    <p><strong>Kabianga Senior School</strong> is a public National Boys' Boarding Secondary School located in Kabianga Division, Belgut Sub-County, Kericho County, approximately 26 km from Kericho Town along the Kericho–Kisumu highway.</p>
+                    <img src="km.webp" alt="Kabianga Senior School administration block illuminated at dusk" loading="lazy" decoding="async" class="w-full max-h-80 object-cover rounded-lg">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4 text-center">
+                        <div class="p-3 bg-khs-offwhite rounded border border-gray-200">
+                            <span class="block font-heading font-extrabold text-xl text-khs-maroon">1925</span>
+                            <span class="text-xs text-gray-500">Year Founded</span>
+                        </div>
+                        <div class="p-3 bg-khs-offwhite rounded border border-gray-200">
+                            <span class="block font-heading font-extrabold text-xl text-khs-maroon">National</span>
+                            <span class="text-xs text-gray-500">School Category</span>
+                        </div>
+                        <div class="p-3 bg-khs-offwhite rounded border border-gray-200">
+                            <span class="block font-heading font-extrabold text-xl text-khs-maroon">1,850+</span>
+                            <span class="text-xs text-gray-500">Student Enrollment</span>
+                        </div>
+                        <div class="p-3 bg-khs-offwhite rounded border border-gray-200">
+                            <span class="block font-heading font-extrabold text-xl text-khs-maroon">100+</span>
+                            <span class="text-xs text-gray-500">TSC &amp; BoM Faculty</span>
+                        </div>
+                    </div>
+                    <p>Set on a sprawling, green 85-acre campus bordering the University of Kabianga, the school enjoys a cool, serene climate ideal for focused academic scholarship and co-curricular excellence.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5 items-center p-4 bg-khs-offwhite border border-gray-200 rounded-lg">
+                        <figure>
+                            <img src="princii.jpeg" alt="Chief Principal of Kabianga Senior School speaking at a student talent event" loading="lazy" decoding="async" class="w-full aspect-[4/5] object-contain bg-gray-900 rounded-lg">
+                            <figcaption class="text-xs text-gray-600 mt-2">Encouraging student talent at Kabianga.</figcaption>
+                        </figure>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wide text-khs-goldDark">School Leadership</span>
+                            <h3 class="font-heading font-bold text-base text-khs-maroon mt-1">Chief Principal &amp; Board of Management Secretary</h3>
+                            <p class="text-xs text-gray-600 mt-2">The Chief Principal provides overall institutional leadership, guides strategic curriculum implementation, and oversees stewardship of school resources.</p>
+                        </div>
+                    </div>
+                `
+                },
+                'vision-values': {
+                    eyebrow: 'Institutional Philosophy',
+                    title: 'Vision, Mission & Core Values',
+                    html: `
+                    <div class="space-y-4">
+                        <div class="p-4 bg-khs-offwhite rounded-lg border-l-4 border-khs-maroon">
+                            <h4 class="font-heading font-bold text-khs-maroon mb-1">Our Vision</h4>
+                            <p>To be a premier center of academic excellence and holistic character formation in East Africa.</p>
+                        </div>
+                        <div class="p-4 bg-khs-offwhite rounded-lg border-l-4 border-khs-gold">
+                            <h4 class="font-heading font-bold text-khs-goldDark mb-1">Our Mission</h4>
+                            <p>To provide quality, learner-centered education in a disciplined environment that nurtures intellectual curiosity, moral uprightness, and service to humanity.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-gray-800 mb-2">Core Values</h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <li class="p-2.5 border rounded flex items-center gap-2"> <strong>Discipline:</strong> Self-mastery &amp; order</li>
+                                <li class="p-2.5 border rounded flex items-center gap-2"> <strong>Integrity:</strong> Honesty &amp; accountability</li>
+                                <li class="p-2.5 border rounded flex items-center gap-2"> <strong>Excellence:</strong> Striving for top standards</li>
+                                <li class="p-2.5 border rounded flex items-center gap-2"> <strong>Teamwork:</strong> Brotherhood &amp; unity</li>
+                                <li class="p-2.5 border rounded flex items-center gap-2 sm:col-span-2"> <strong>Fear of God:</strong> Spiritual grounding &amp; moral uprightness</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+                },
+                'administration': {
+                    eyebrow: 'Governance & Leadership',
+                    title: 'School Administration',
+                    html: `
+                    <p>Kabianga Senior School is governed by a duly constituted <strong>Board of Management (BoM)</strong> appointed by the Ministry of Education, working closely with the <strong>Parents Association (PA)</strong> and the Executive Administration.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+                        <figure class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                            <img src="teachers.webp" alt="Kabianga Senior School teachers and staff gathered for a meeting" loading="lazy" decoding="async" class="w-full h-48 object-cover">
+                            <figcaption class="p-3 bg-gray-50 text-xs font-semibold text-khs-charcoal">Teaching Staff</figcaption>
+                        </figure>
+                        <figure class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                            <img src="management.jpg" alt="Kabianga school management member working in the school office" loading="lazy" decoding="async" class="w-full h-48 object-cover">
+                            <figcaption class="p-3 bg-gray-50 text-xs font-semibold text-khs-charcoal">School Management</figcaption>
+                        </figure>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+                        <div class="p-4 border border-gray-200 rounded-lg">
+                            <span class="text-[11px] font-bold uppercase text-khs-goldDark">Chief Principal &amp; BoM Secretary</span>
+                            <img src="princii.jpeg" alt="Chief Principal of Kabianga Senior School speaking at a student talent event" loading="lazy" decoding="async" class="w-full aspect-[4/5] object-contain bg-gray-900 rounded-lg my-3">
+                            <h4 class="font-heading font-bold text-base text-gray-900 mt-0.5">Office of the Chief Principal</h4>
+                            <p class="text-xs text-gray-600 mt-1">Overall institutional leadership, strategic curriculum implementation, and resource stewardship.</p>
+                        </div>
+                        <div class="p-4 border border-gray-200 rounded-lg">
+                            <span class="text-[11px] font-bold uppercase text-khs-goldDark">Deputy Principal (Academics)</span>
+                            <h4 class="font-heading font-bold text-base text-gray-900 mt-0.5">Curriculum &amp; Examinations</h4>
+                            <p class="text-xs text-gray-600 mt-1">Coordinates Senior School pathways, academic departments, KNEC registration, and internal assessments.</p>
+                        </div>
+                        <div class="p-4 border border-gray-200 rounded-lg">
+                            <span class="text-[11px] font-bold uppercase text-khs-goldDark">Deputy Principal (Administration)</span>
+                            <h4 class="font-heading font-bold text-base text-gray-900 mt-0.5">Welfare &amp; Discipline</h4>
+                            <p class="text-xs text-gray-600 mt-1">Oversees boarding houses, student council mentorship, guidance &amp; counseling, and campus safety.</p>
+                        </div>
+                        <div class="p-4 border border-gray-200 rounded-lg">
+                            <span class="text-[11px] font-bold uppercase text-khs-goldDark">Senior Master (Co-Curricular)</span>
+                            <h4 class="font-heading font-bold text-base text-gray-900 mt-0.5">Sports, Clubs &amp; Societies</h4>
+                            <p class="text-xs text-gray-600 mt-1">Manages KSSSA sports teams, music &amp; drama festivals, and student clubs.</p>
+                        </div>
+                    </div>
+                `
+                },
+                'policies': {
+                    eyebrow: 'Institutional Standards',
+                    title: 'School Policies & Code of Conduct',
+                    html: `
+                    <ul class="space-y-3">
+                        <li class="p-3 bg-gray-50 rounded border-l-4 border-khs-maroon">
+                            <strong>1. Academic Integrity Policy:</strong> Zero tolerance for examination malpractice; commitment to original scholarship and timely completion of assignments.
+                        </li>
+                        <li class="p-3 bg-gray-50 rounded border-l-4 border-khs-gold">
+                            <strong>2. Discipline &amp; Anti-Bullying Charter:</strong> Kabianga Senior School upholds a strict brotherhood ethos where every student is treated with dignity, respect, and safety.
+                        </li>
+                        <li class="p-3 bg-gray-50 rounded border-l-4 border-khs-maroon">
+                            <strong>3. ICT &amp; Digital Citizenship Policy:</strong> Responsible use of computer laboratories and digital learning tools; personal mobile phones are strictly prohibited in school.
+                        </li>
+                        <li class="p-3 bg-gray-50 rounded border-l-4 border-khs-gold">
+                            <strong>4. Environmental Conservation Policy:</strong> All students participate in maintaining our lush green campus and Kabianga forest conservation initiatives.
+                        </li>
+                    </ul>
+                `
+                },
+                'kcse': {
+                    eyebrow: 'Academic Track Record',
+                    title: 'KCSE Performance Summary (2021 – 2025)',
+                    html: `
+                    <p class="mb-3">Kabianga Senior School consistently ranks among Kenya's elite national schools, posting over <strong>94% direct university qualification (C+ and above)</strong> annually.</p>
+                    <div class="overflow-x-auto border border-gray-200 rounded-lg">
+                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                            <thead class="bg-khs-maroon text-white font-heading">
+                                <tr>
+                                    <th class="p-3">Year</th>
+                                    <th class="p-3">Candidature</th>
+                                    <th class="p-3">Mean Score</th>
+                                    <th class="p-3">Mean Grade</th>
+                                    <th class="p-3">University Entry (C+ &amp; Above)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="bg-amber-50/50 font-semibold">
+                                    <td class="p-3">2025</td>
+                                    <td class="p-3">462</td>
+                                    <td class="p-3 text-khs-maroon font-bold">9.68</td>
+                                    <td class="p-3 font-bold">B+</td>
+                                    <td class="p-3">96.5% (446 Students)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3">2024</td>
+                                    <td class="p-3">448</td>
+                                    <td class="p-3 font-bold">9.54</td>
+                                    <td class="p-3">B+</td>
+                                    <td class="p-3">95.8% (429 Students)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3">2023</td>
+                                    <td class="p-3">435</td>
+                                    <td class="p-3 font-bold">9.41</td>
+                                    <td class="p-3">B+</td>
+                                    <td class="p-3">94.9% (413 Students)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3">2022</td>
+                                    <td class="p-3">419</td>
+                                    <td class="p-3 font-bold">9.32</td>
+                                    <td class="p-3">B</td>
+                                    <td class="p-3">94.0% (394 Students)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+                },
+                'departments': {
+                    eyebrow: 'Curriculum & Instruction',
+                    title: 'Academic Departments',
+                    html: `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 border rounded-lg bg-gray-50">
+                            <img src="teachers.webp" alt="Kabianga Senior School teachers in a staff meeting" loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-md mb-3">
+                            <h4 class="font-heading font-bold text-khs-maroon mb-1"> Mathematics Department</h4>
+                            <p class="text-xs">Core Mathematics, Further Mathematics &amp; National Math Contest coaching.</p>
+                        </div>
+                        <div class="p-4 border rounded-lg bg-gray-50">
+                            <img src="science.jpg" alt="Kabianga students working in a school science laboratory" loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-md mb-3">
+                            <h4 class="font-heading font-bold text-khs-maroon mb-1"> Sciences Department</h4>
+                            <p class="text-xs">Physics, Chemistry, Biology &amp; KSEF Science &amp; Engineering innovation labs.</p>
+                        </div>
+                        <div class="p-4 border rounded-lg bg-gray-50">
+                            <img src="teachers.webp" alt="Kabianga Senior School teachers in a staff meeting" loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-md mb-3">
+                            <h4 class="font-heading font-bold text-khs-maroon mb-1"> Languages Department</h4>
+                            <p class="text-xs">English, Kiswahili, French, German, Literature &amp; Public Speaking/Debate.</p>
+                        </div>
+                        <div class="p-4 border rounded-lg bg-gray-50">
+                            <img src="teachers.webp" alt="Kabianga Senior School teachers in a staff meeting" loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-md mb-3">
+                            <h4 class="font-heading font-bold text-khs-maroon mb-1"> Humanities Department</h4>
+                            <p class="text-xs">History &amp; Government, Geography, CRE &amp; IRE.</p>
+                        </div>
+                        <div class="p-4 border rounded-lg bg-gray-50 sm:col-span-2">
+                            <img src="ict.jpg" alt="Kabianga students using computers in the school ICT lab" loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-md mb-3">
+                            <h4 class="font-heading font-bold text-khs-maroon mb-1"> Technical, ICT &amp; Creative Arts</h4>
+                            <p class="text-xs">Computer Studies, Agriculture, Business Studies, Woodwork, Music &amp; Fine Art.</p>
+                        </div>
+                    </div>
+                `
+                },
+                'sports': {
+                    eyebrow: 'Information Desk',
+                    title: 'Games, Sports & Co-Curricular Excellence',
+                    html: `
+                    <p>Kabianga Senior School boasts expansive sports pitches, modern courts, and a rich sporting heritage across East Africa:</p>
+                    <ul class="list-disc pl-5 space-y-2 my-3">
+                        <li><strong>Athletics &amp; Cross Country:</strong> Renowned nursery of middle- and long-distance track champions.</li>
+                        <li><strong>Rugby 15s &amp; 7s ("The Kabianga Bulls"):</strong> Perennial Rift Valley &amp; National KSSSA contenders.</li>
+                        <li><strong>Football, Basketball, Hockey &amp; Volleyball:</strong> Floodlit courts and regulation grass pitches.</li>
+                        <li><strong>Indoor Games:</strong> Chess, Scrabble, Table Tennis, and Badminton.</li>
+                    </ul>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+                        <figure class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                            <img src="images  (30).jpeg" alt="Kabianga student showcasing strength at a school fitness event" loading="lazy" decoding="async" class="w-full h-56 object-cover">
+                            <figcaption class="p-3 bg-gray-50 text-xs font-semibold text-khs-charcoal">Student strength and fitness</figcaption>
+                        </figure>
+                        <figure class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                            <img src="images  (34).jpeg" alt="Kabianga students in sports kits celebrating with a trophy on the school field" loading="lazy" decoding="async" class="w-full h-56 object-cover">
+                            <figcaption class="p-3 bg-gray-50 text-xs font-semibold text-khs-charcoal">School team trophy celebration</figcaption>
+                        </figure>
+                    </div>
+                `
+                },
+                'clubs': {
+                    eyebrow: 'Student Life',
+                    title: 'Clubs & Societies',
+                    html: `
+                    <p>Every student belongs to at least one club or spiritual society to nurture leadership and teamwork:</p>
+                    <figure class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 items-center rounded-lg border overflow-hidden bg-khs-offwhite">
+                        <img src="band.jpeg" alt="Kabianga Senior School band with their instruments" loading="lazy" decoding="async" class="w-full h-52 object-cover">
+                        <figcaption class="p-4">
+                            <h4 class="font-heading font-bold text-khs-maroon mb-1">Kabianga Senior School Band</h4>
+                            <p class="text-xs text-gray-600">Our school band brings students together through music and performances at school events and festivals.</p>
+                        </figcaption>
+                    </figure>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+                        <figure class="rounded-lg overflow-hidden border shadow-sm">
+                            <img src="talent (3).jpeg" alt="Kabianga students performing a cultural dance" loading="lazy" decoding="async" class="w-full h-48 object-cover">
+                            <figcaption class="p-3 bg-gray-50">
+                                <h4 class="font-heading font-bold text-khs-maroon text-sm">Performing Arts &amp; Cultural Dance</h4>
+                                <p class="text-xs text-gray-600 mt-1">Students share their creativity through dance, drama, and cultural performances.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="rounded-lg overflow-hidden border shadow-sm">
+                            <img src="talent (5).jpeg" alt="Student photographer documenting a Kabianga school event" loading="lazy" decoding="async" class="w-full h-48 object-cover">
+                            <figcaption class="p-3 bg-gray-50">
+                                <h4 class="font-heading font-bold text-khs-maroon text-sm">Journalism &amp; Student Media</h4>
+                                <p class="text-xs text-gray-600 mt-1">Student media captures stories and moments from school events.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="rounded-lg overflow-hidden border shadow-sm sm:col-span-2">
+                            <img src="talent (1).jpeg" alt="A student hosting a Kabianga school talent event" loading="lazy" decoding="async" class="w-full h-56 object-cover">
+                            <figcaption class="p-3 bg-gray-50">
+                                <h4 class="font-heading font-bold text-khs-maroon text-sm">Student Talent Showcase</h4>
+                                <p class="text-xs text-gray-600 mt-1">Learners take the stage to celebrate music, talent, and school spirit.</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="rounded-lg overflow-hidden border shadow-sm sm:col-span-2">
+                            <img src="images  (58).jpeg" alt="Kabianga students gathered beside a school bus" loading="lazy" decoding="async" class="w-full h-72 sm:h-96 object-cover">
+                            <figcaption class="p-3 bg-gray-50">
+                                <h4 class="font-heading font-bold text-khs-maroon text-sm">SDA Youth Society</h4>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <figure class="rounded-lg overflow-hidden border shadow-sm my-4">
+                        <img src="innovation.jpg" alt="Kabianga students and teachers presenting a robotics project" loading="lazy" decoding="async" class="w-full aspect-video object-cover">
+                        <figcaption class="p-3 bg-gray-50">
+                            <h4 class="font-heading font-bold text-khs-maroon text-sm">Science &amp; Robotics Club</h4>
+                            <p class="text-xs text-gray-600 mt-1">Students apply science and technology through hands-on design and innovation.</p>
+                        </figcaption>
+                    </figure>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 my-3 text-xs font-semibold">
+                        <div class="p-2.5 bg-khs-offwhite rounded border">Journalism &amp; Editorial Club</div>
+                        <div class="p-2.5 bg-khs-offwhite rounded border">Debate &amp; Model UN</div>
+                        <div class="p-2.5 bg-khs-offwhite rounded border">Kenya Scouts &amp; St. John</div>
+                        <div class="p-2.5 bg-khs-offwhite rounded border">Drama &amp; School Choir</div>
+                        <div class="p-2.5 bg-khs-offwhite rounded border">Christian Union (CU)</div>
+                        <div class="p-2.5 bg-khs-offwhite rounded border">YCS (Catholic Action)</div>
+                        <div class="p-2.5 bg-khs-offwhite rounded border">SDA Youth Society</div>
+                        <div class="p-2.5 bg-khs-offwhite rounded border">Muslim Students (MSA)</div>
+                    </div>
+                `
+                },
+                'leadership': {
+                    eyebrow: 'Student Governance',
+                    title: 'Student Leadership Council',
+                    html: `
+                    <p>Through democratic annual elections vetted by faculty and peers, the <strong>Kabianga Student Council</strong> serves as the vital bridge between the student body and administration.</p>
+                    <p>Led by the School Captain, Deputy School Captains, Dining Hall Captains, Academic Secretaries, and Dormitory Prefects across our 14 residential houses (including Chepchabas, Kabianga, Kiptere, Kapkatet, and Belgut Houses), student leaders uphold peer mentorship and order.</p>
+                    <h4 class="font-heading font-bold text-khs-maroon mt-5 mb-2">Meet the Student Council</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        ${schoolCouncilPhotoNumbers.map((photoNumber) => `
+                            <figure class="rounded-lg overflow-hidden border shadow-sm">
+                                <img src="images  (${photoNumber}).jpeg" alt="Kabianga Senior School Council members in black blazers" loading="lazy" decoding="async" class="w-full h-44 object-cover">
+                                <figcaption class="p-2 text-xs font-semibold bg-gray-50">Student Council</figcaption>
+                            </figure>
+                        `).join('')}
+                    </div>
+                `
+            },
+            'facilities': {
+                eyebrow: 'Campus Infrastructure',
+                title: 'Facilities & Amenities',
+                html: `
+                    <ul class="space-y-2.5">
+                        <li><strong>Modern Science Complex:</strong> 8 fully equipped Physics, Chemistry, and Biology laboratories.</li>
+                        <li><strong>Digital ICT Innovation Hubs:</strong> High-speed fiber internet, 120+ desktop workstations, and smart classrooms.</li>
+                        <li><strong>Centenary Library &amp; Resource Center:</strong> Seating capacity for 450 students with digital e-learning archives.</li>
+                        <li><strong>School Sanatorium (dispensary):</strong> 24/7 qualified clinical officers and nurses ensuring student healthcare.</li>
+                        <li><strong>Modern Boarding &amp; Dining Complex:</strong> Clean, well-ventilated dormitories, solar water heating, and nutritious balanced meals.</li>
+                    </ul>
+                `
+            },
+            'alumni': {
+                eyebrow: 'Kabianga Old Boys Association (KOBA)',
+                title: 'Notable Alumni & Heritage Network',
+                html: `
+                    <p>For over a century, Kabianga Senior School has produced distinguished leaders serving Kenya and the global community:</p>
+                    <ul class="list-disc pl-5 space-y-2 my-3">
+                        <li>Cabinet Secretaries, Principal Secretaries, Senators, and Governors in public service.</li>
+                        <li>Senior Counsel advocates, High Court &amp; Court of Appeal Judges.</li>
+                        <li>Leading Consultant Surgeons, Vice-Chancellors, and University Professors.</li>
+                        <li>World-renowned Kenyan middle- and long-distance athletics medalists.</li>
+                    </ul>
+                    <p class="text-xs text-gray-500">Alumni interested in mentorship programs or KOBA projects can reach out via <strong>alumni@kabiangahigh.sc.ke</strong>.</p>
+                `
+            },
+            'admission-overview': {
+                eyebrow: 'Admissions Office',
+                title: 'Admission Overview',
+                html: `
+                    <p>Admission into <strong>Kabianga Senior School</strong> is merit-based and conducted strictly in accordance with Ministry of Education national placement guidelines for Senior School (Grade 10) and verified mid-stream transfer vacancies.</p>
+                    <p>We welcome disciplined, motivated boys from all 47 counties of Kenya and international applicants meeting equivalent academic standards.</p>
+                `
+            },
+            'admission-criteria': {
+                eyebrow: 'Admissions Office',
+                title: 'Admission Criteria & Requirements',
+                html: `
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Grade 10 Entry:</strong> Official Ministry of Education (KJSEA / KEMIS) placement letter selecting Kabianga Senior School.</li>
+                        <li><strong>Transfer Vacancies (Form 2 / Form 3):</strong> Subject to space availability, satisfactory conduct report from previous school, and strong academic transcripts.</li>
+                        <li><strong>Mandatory Documents on Reporting:</strong> Original &amp; copy of Birth Certificate, Assessment/Result Slip, Nemis/UPI Number, Medical Fitness Certificate, and 4 passport-size photographs.</li>
+                    </ul>
+                `
+            },
+            'term-dates': {
+                eyebrow: 'Academic Calendar',
+                title: 'Official Term Dates (2026 / 2027)',
+                html: `
+                    <div class="border rounded-lg overflow-hidden">
+                        <table class="w-full text-left text-xs sm:text-sm">
+                            <thead class="bg-khs-maroon text-white font-heading">
+                                <tr>
+                                    <th class="p-3">Term</th>
+                                    <th class="p-3">Opening Date</th>
+                                    <th class="p-3">Closing Date</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr><td class="p-3 font-semibold">Term 3, 2026</td><td class="p-3">31st August 2026</td><td class="p-3">27th November 2026 (KCSE Period)</td></tr>
+                                <tr class="bg-gray-50"><td class="p-3 font-semibold">Term 1, 2027</td><td class="p-3">11th January 2027</td><td class="p-3">9th April 2027</td></tr>
+                                <tr><td class="p-3 font-semibold">Term 2, 2027</td><td class="p-3">3rd May 2027</td><td class="p-3">6th August 2027</td></tr>
+                                <tr class="bg-gray-50"><td class="p-3 font-semibold">Term 3, 2027</td><td class="p-3">30th August 2027</td><td class="p-3">26th November 2027</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            'fee-payment': {
+                eyebrow: 'Accounts & Bursary Office',
+                title: 'Official Fee Structure & Payment Channels',
+                html: `
+                    <p>Annual boarding fees follow the official <strong>Ministry of Education National School Fee Guidelines</strong> (KES 53,554 per year, payable in three termly installments: Term 1: 50%, Term 2: 30%, Term 3: 20%).</p>
+                    <div class="p-4 bg-amber-50 border border-khs-gold rounded-lg my-3 space-y-1.5 text-xs sm:text-sm">
+                        <p class="font-bold text-khs-maroon uppercase">Official Payment Channels (No Cash Accepted):</p>
+                        <p><strong>1. eCitizen Government Paybill:</strong> Business No. <code>222222</code> | Account: <code>KHS-[AdmissionNo]</code></p>
+                        <p><strong>2. Kenya Commercial Bank (KCB) Kericho Branch:</strong> Account Name: <em>Kabianga Senior School Board of Management</em> | A/C No: <code>1107452891</code></p>
+                    </div>
+                `
+            },
+            'how-to-apply': {
+                eyebrow: 'Admissions Portal',
+                title: 'How To Apply & Online Inquiry Form',
+                html: `
+                    <ol class="list-decimal pl-5 space-y-2 mb-5">
+                        <li>Verify placement via the Ministry of Education portal or submit a transfer inquiry below.</li>
+                        <li>Download and complete the Joining Instructions &amp; Medical Form.</li>
+                        <li>Pay Term 1 fees via eCitizen or KCB Bank and present the banking slip on reporting day.</li>
+                    </ol>
+                    <form onsubmit="handleAdmissionInquiry(event)" class="bg-khs-offwhite p-4 rounded-lg border border-gray-200 space-y-3">
+                        <h4 class="font-heading font-bold text-xs uppercase text-khs-maroon">Submit Admission / Transfer Inquiry</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <input type="text" required placeholder="Student Full Name" class="w-full px-3 py-2 rounded border border-gray-300 text-xs focus:outline-none focus:border-khs-maroon">
+                            <input type="text" required placeholder="Parent / Guardian Phone (+254...)" class="w-full px-3 py-2 rounded border border-gray-300 text-xs focus:outline-none focus:border-khs-maroon">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <select class="w-full px-3 py-2 rounded border border-gray-300 text-xs focus:outline-none focus:border-khs-maroon">
+                                <option>Grade 10 (Senior School Entry)</option>
+                                <option>Form 2 Transfer Inquiry</option>
+                                <option>Form 3 Transfer Inquiry</option>
+                            </select>
+                            <input type="text" required placeholder="Current / Previous School" class="w-full px-3 py-2 rounded border border-gray-300 text-xs focus:outline-none focus:border-khs-maroon">
+                        </div>
+                        <button type="submit" class="bg-khs-maroon hover:bg-khs-maroonDark text-white font-heading font-bold text-xs uppercase px-5 py-2.5 rounded transition-colors">
+                            Submit Application Inquiry
+                        </button>
+                    </form>
+                `
+            },
+            'gallery': {
+                eyebrow: 'Campus Showcase',
+                title: 'Kabianga Senior School Photo Gallery',
+                html: `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        ${schoolGalleryPhotos.map((photo) => `
+                            <figure class="rounded-lg overflow-hidden border shadow-sm">
+                                <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" class="w-full h-44 object-cover">
+                                <figcaption class="p-2.5 text-xs font-semibold bg-gray-50">${photo.caption}</figcaption>
+                            </figure>
+                        `).join('')}
+                    </div>
+                    <p class="text-[11px] text-gray-500 mt-4">Photos supplied for the Kabianga Senior School gallery.</p>
+                `
+            },
+            'contact': {
+                eyebrow: 'Get In Touch',
+                title: 'Contact Kabianga Senior School',
+                html: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <p><strong>Postal Address:</strong><br>The Chief Principal, Kabianga Senior School,<br>P.O. Box 1 - 20201, Kabianga, Kericho County, Kenya.</p>
+                            <p><strong>Telephone:</strong><br>+254 720 456 789 / +254 733 987 654</p>
+                            <p><strong>Official Email:</strong><br>info@kabiangahigh.sc.ke</p>
+                            <p><strong>Visiting Hours:</strong><br>Monday – Friday: 8:00 AM – 4:30 PM<br>Saturdays (By Appointment): 9:00 AM – 1:00 PM</p>
+                        </div>
+                        <form onsubmit="handleContactSubmit(event)" class="space-y-3 bg-khs-offwhite p-4 rounded-lg border">
+                            <input type="text" required placeholder="Your Full Name" class="w-full px-3 py-2 rounded border border-gray-300 text-xs focus:outline-none focus:border-khs-maroon">
+                            <input type="email" required placeholder="Your Email Address" class="w-full px-3 py-2 rounded border border-gray-300 text-xs focus:outline-none focus:border-khs-maroon">
+                            <textarea rows="3" required placeholder="How can we assist you?" class="w-full px-3 py-2 rounded border border-gray-300 text-xs focus:outline-none focus:border-khs-maroon"></textarea>
+                            <button type="submit" class="w-full bg-khs-maroon hover:bg-khs-maroonDark text-white font-heading font-bold text-xs uppercase py-2.5 rounded transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-3">
+                            <div>
+                                <h4 class="font-heading font-bold text-sm text-khs-charcoal">Find us in Kabianga</h4>
+                                <p class="text-xs text-gray-500 mt-1">Kabianga, Kericho County, Kenya</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=Kabianga+High+School%2C+Kabianga%2C+Kenya" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-khs-maroon hover:underline">
+                                Open directions in Google Maps
+                            </a>
+                        </div>
+                        <iframe
+                            title="Map showing Kabianga Senior School in Kabianga, Kenya"
+                            src="https://maps.google.com/maps?q=Kabianga%20High%20School%2C%20Kabianga%2C%20Kenya&amp;output=embed"
+                            class="w-full h-64 sm:h-80 rounded-lg border border-gray-200"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                `
+            },
+        };
+
+        function openInfoModal(key) {
+            const data = modalContentMap[key];
+            if (!data) return;
+            document.getElementById('modal-eyebrow').textContent = data.eyebrow;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-body').innerHTML = data.html;
+            enableImageZoom(document.getElementById('modal-body'));
+            document.getElementById('info-modal').classList.remove('hidden');
+        }
+
+        function closeInfoModal() {
+            document.getElementById('info-modal').classList.add('hidden');
+        }
+
+        function enableImageZoom(container = document) {
+            container.querySelectorAll('img:not(#image-zoom-target)').forEach((image) => {
+                image.classList.add('cursor-zoom-in', 'focus-visible:outline-none', 'focus-visible:ring-4', 'focus-visible:ring-khs-gold');
+                image.tabIndex = 0;
+                image.setAttribute('aria-haspopup', 'dialog');
+                image.setAttribute('aria-label', image.alt ? `Zoom image: ${image.alt}` : 'Zoom image');
+                if (!image.closest('a, button')) {
+                    image.setAttribute('role', 'button');
+                }
+            });
+        }
+
+        let imageZoomPreviousFocus = null;
+
+        function openImageZoom(image) {
+            const zoomModal = document.getElementById('image-zoom-modal');
+            const zoomedImage = document.getElementById('image-zoom-target');
+            imageZoomPreviousFocus = document.activeElement;
+            zoomedImage.src = image.currentSrc || image.src;
+            zoomedImage.alt = image.alt;
+            document.getElementById('image-zoom-caption').textContent = image.alt;
+            const zoomLink = document.getElementById('image-zoom-link');
+            const originalLink = image.closest('a');
+            if (originalLink) {
+                zoomLink.href = originalLink.href;
+                if (originalLink.target) zoomLink.target = originalLink.target;
+                else zoomLink.removeAttribute('target');
+                zoomLink.classList.remove('hidden');
+            } else {
+                zoomLink.classList.add('hidden');
+                zoomLink.removeAttribute('href');
+                zoomLink.removeAttribute('target');
+            }
+            zoomModal.classList.remove('hidden');
+            document.getElementById('close-image-zoom').focus();
+        }
+
+        function closeImageZoom() {
+            const zoomModal = document.getElementById('image-zoom-modal');
+            zoomModal.classList.add('hidden');
+            document.getElementById('image-zoom-target').removeAttribute('src');
+            document.getElementById('image-zoom-target').alt = '';
+            document.getElementById('image-zoom-caption').textContent = '';
+            document.getElementById('image-zoom-link').classList.add('hidden');
+            if (imageZoomPreviousFocus instanceof HTMLElement && imageZoomPreviousFocus !== document.body) {
+                imageZoomPreviousFocus.focus();
+            }
+            imageZoomPreviousFocus = null;
+        }
+
+        enableImageZoom();
+        document.addEventListener('click', (event) => {
+            if (!(event.target instanceof Element)) return;
+            const image = event.target.closest('img');
+            if (!image || image.id === 'image-zoom-target') return;
+            event.preventDefault();
+            openImageZoom(image);
+        });
+        document.getElementById('close-image-zoom').addEventListener('click', closeImageZoom);
+        document.getElementById('image-zoom-modal').addEventListener('click', (event) => {
+            if (event.target === event.currentTarget) closeImageZoom();
+        });
+
+        // Close modal on outside click or Escape key
+        document.getElementById('info-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'info-modal') closeInfoModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!document.getElementById('image-zoom-modal').classList.contains('hidden')) {
+                    closeImageZoom();
+                } else {
+                    closeInfoModal();
+                }
+                return;
+            }
+            if ((e.key === 'Enter' || e.key === ' ') && e.target instanceof HTMLImageElement && e.target.id !== 'image-zoom-target') {
+                e.preventDefault();
+                openImageZoom(e.target);
+            }
+        });
+
+        function handleAdmissionInquiry(e) {
+            e.preventDefault();
+            closeInfoModal();
+            showToast('Thank you! Your admission inquiry has been received by the KHS Admissions Office.');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            closeInfoModal();
+            showToast('Message sent! Our administration desk will respond within 24 hours.');
+        }
+
+        function downloadSchoolMagazine() {
+            showToast('Downloading "The Kabianga Echo - 2026 Edition" (PDF, 4.8 MB)...');
+        }
+
+        /* -------------------------------------------------------------------
+         * 6. TOAST NOTIFICATION HELPER
+         * ------------------------------------------------------------------- */
+        let toastTimeout;
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('hidden');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4200);
+        }
+
+        /* -------------------------------------------------------------------
+         * 7. ACCESSIBILITY WIDGET CONTROLS (Exact MHS-Kabarak A11y Toolbar)
+         * ------------------------------------------------------------------- */
+        let fontScale = 1;
+        let letterSpace = 0;
+        let readingGuideActive = false;
+
+        function toggleA11yPanel() {
+            document.getElementById('a11y-panel').classList.toggle('hidden');
+        }
+
+        function adjustTextSize(delta) {
+            fontScale = Math.min(1.35, Math.max(0.85, +(fontScale + delta).toFixed(2)));
+            document.documentElement.style.setProperty('--font-scale', fontScale);
+            showToast(`Text size set to ${Math.round(fontScale * 100)}%`);
+        }
+
+        function adjustTextSpacing(delta) {
+            letterSpace = Math.min(3, Math.max(0, +(letterSpace + delta).toFixed(1)));
+            document.documentElement.style.setProperty('--letter-space', `${letterSpace}px`);
+            showToast(`Text spacing adjusted (${letterSpace}px)`);
+        }
+
+        function toggleA11yClass(mode) {
+            const html = document.documentElement;
+            const cls = mode === 'invert' ? 'a11y-invert' : 'a11y-grayscale';
+            const badge = document.getElementById(`badge-${mode}`);
+            const active = html.classList.toggle(cls);
+            badge.textContent = active ? 'ON' : 'OFF';
+            badge.className = active ?
+                'text-[10px] px-1.5 py-0.5 rounded bg-khs-maroon text-white' :
+                'text-[10px] px-1.5 py-0.5 rounded bg-gray-100';
+        }
+
+        function toggleA11yBody(cls, badgeId) {
+            const badge = document.getElementById(badgeId);
+            const active = document.body.classList.toggle(cls);
+            badge.textContent = active ? 'ON' : 'OFF';
+            badge.className = active ?
+                'text-[10px] px-1.5 py-0.5 rounded bg-khs-maroon text-white' :
+                'text-[10px] px-1.5 py-0.5 rounded bg-gray-100';
+        }
+
+        function toggleReadingGuide() {
+            const bar = document.getElementById('reading-guide-bar');
+            const badge = document.getElementById('badge-guide');
+            readingGuideActive = !readingGuideActive;
+            bar.style.display = readingGuideActive ? 'block' : 'none';
+            badge.textContent = readingGuideActive ? 'ON' : 'OFF';
+            badge.className = readingGuideActive ?
+                'text-[10px] px-1.5 py-0.5 rounded bg-khs-maroon text-white' :
+                'text-[10px] px-1.5 py-0.5 rounded bg-gray-100';
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            if (readingGuideActive) {
+                document.getElementById('reading-guide-bar').style.top = `${e.clientY}px`;
+            }
+        });
+
+        function resetA11ySettings() {
+            fontScale = 1;
+            letterSpace = 0;
+            readingGuideActive = false;
+            document.documentElement.style.setProperty('--font-scale', '1');
+            document.documentElement.style.setProperty('--letter-space', '0px');
+            document.documentElement.classList.remove('a11y-invert', 'a11y-grayscale');
+            document.body.classList.remove('a11y-underline', 'a11y-big-cursor');
+            document.getElementById('reading-guide-bar').style.display = 'none';
+
+            ['badge-invert', 'badge-grayscale', 'badge-underline', 'badge-cursor', 'badge-guide'].forEach(id => {
+                const b = document.getElementById(id);
+                b.textContent = 'OFF';
+                b.className = 'text-[10px] px-1.5 py-0.5 rounded bg-gray-100';
+            });
+            showToast('All accessibility settings reset to default.');
+        }
+    </script>
+</body>
+
+</html>
